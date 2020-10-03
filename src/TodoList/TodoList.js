@@ -56,7 +56,7 @@ class TodoList extends Component {
             >
               <p
                 className='m-2 todofont'
-                style={{ color: 'white' }}
+                style={{ color: 'white', cursor: 'pointer' }}
                 onClick={this.props.DeleteTodo}
               >
                 x
@@ -65,7 +65,7 @@ class TodoList extends Component {
             <div className='d-inline-block col-1 p-2 m-auto section'>
               <p
                 className='m-2 todofont'
-                style={{ color: 'white' }}
+                style={{ color: 'white', cursor: 'pointer' }}
                 onClick={this.handleEdit}
               >
                 edit
@@ -121,7 +121,11 @@ class TodoList extends Component {
                 id={this.state.id}
                 className='d-inline-block col-1 p-2 m-auto section'
               >
-                <p className='m-2 todofont' onClick={this.props.DeleteTodo}>
+                <p
+                  className='m-2 todofont'
+                  onClick={this.props.DeleteTodo}
+                  style={{ cursor: 'pointer' }}
+                >
                   x
                 </p>
               </div>
@@ -129,7 +133,11 @@ class TodoList extends Component {
                 id={this.state.id}
                 className='d-inline-block col-1 p-2 m-auto section'
               >
-                <p className='m-2 todofont' onClick={this.handleDoneSubmit}>
+                <p
+                  className='m-2 todofont'
+                  onClick={this.handleDoneSubmit}
+                  style={{ cursor: 'pointer' }}
+                >
                   done!
                 </p>
               </div>

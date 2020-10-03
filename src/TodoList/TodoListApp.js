@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import TodoList from './TodoList';
 import TodoForms from './TodoForms';
 
@@ -65,20 +64,27 @@ class TodoListApp extends Component {
             <TodoForms UpdateTodo={this.UpdateTodo} />
           </div>
         </div>
-        <div className='container text-center'>
+        <div className='container text-center '>
           {' '}
-          <button
-            className='btn my-5 p-4 todofont section'
-            style={{
-              backgroundColor: '#175B8E',
-              color: 'white',
-              fontSize: '30px',
-              boxShadow: '-10px -10px #358ACA ',
-            }}
+          <a
+            href='https://github.com/changexd/portfolio/tree/main/src/TodoList'
+            style={{ color: 'white' }}
+            target='_blank'
+            rel='noopener noreferrer'
           >
-            {' '}
-            Click me for the source code!{' '}
-          </button>
+            <button
+              href='https://github.com/changexd/portfolio/tree/main/src/TodoList'
+              className='btn my-5 p-4 todofont section '
+              style={{
+                backgroundColor: '#175B8E',
+                color: 'white',
+                fontSize: '30px',
+                boxShadow: '-10px -10px #358ACA ',
+              }}
+            >
+              Click me for the source code!
+            </button>
+          </a>{' '}
         </div>
       </div>
     );

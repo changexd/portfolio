@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Main from './Main';
-import ColorBox from './ColorBox/ColorBox';
+import LightsOut from './LightsOut/LightsOut';
 import TodoListApp from './TodoList/TodoListApp';
 import BlogPost from './BlogPost/BlogPost';
 import './App.css';
@@ -40,7 +40,7 @@ class App extends Component {
         <Switch>
           <Route exact path='/' render={() => <Main />} />
           <Route exact path='/TodoList' render={() => <TodoListApp />} />
-          <Route exact path='/ColorBox' render={() => <ColorBox />} />
+          <Route exact path='/LightsOut' render={() => <LightsOut />} />
           <Route exact path='/BlogPost' render={() => <BlogPost />} />
         </Switch>
       </div>

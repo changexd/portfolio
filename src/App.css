@@ -16,3 +16,43 @@
     rgba(17, 154, 223, 1) 100%
   );
 }
+/* ----------------------------------------------------------------LightsOut---------------------------------------------------------------- */
+.lightsoutfont {
+  color: white;
+  font-family: 'Pacifico', cursive;
+  -webkit-animation: glow 3s ease-in-out infinite alternate;
+  -moz-animation: glow 3s ease-in-out infinite alternate;
+  animation: glow 3s ease-in-out infinite alternate;
+}
+.lightsoutbuttons {
+  font-family: 'Pacifico', cursive;
+  font-size: 50px;
+}
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px#61a0f1, 0 0 40px #61a0f1,
+      0 0 50px#61a0f1, 0 0 60px #61a0f1, 0 0 70px #61a0f1;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+      0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
+@keyframes blueandpink {
+  from {
+    background-color: #61a0f1;
+  }
+  to {
+    background-color: #ff4da6;
+  }
+}
+
+@keyframes pinkandblue {
+  from {
+    background-color: #ff4da6;
+  }
+  to {
+    background-color: #61a0f1;
+  }
+}

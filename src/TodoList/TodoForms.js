@@ -25,7 +25,11 @@ class TodoForms extends Component {
         <form onSubmit={this.handleSubmit}>
           <label
             className='d-block todofont'
-            style={{ margin: '15px', color: 'white' }}
+            style={{
+              margin: '15px',
+              color: 'white',
+              textDecoration: 'underline',
+            }}
           >
             Start Creating a Task!
           </label>
