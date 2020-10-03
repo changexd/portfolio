@@ -1,0 +1,18 @@
+.todofont {
+  font-family: 'Sansita Swashed', cursive;
+  font-size: 20px;
+  color: white;
+}
+.section:hover {
+  opacity: 60%;
+}
+.todobackground {
+  background: rgb(17, 154, 223);
+  background: linear-gradient(
+    299deg,
+    rgba(17, 154, 223, 1) 0%,
+    rgba(176, 216, 237, 1) 18%,
+    rgba(130, 198, 233, 1) 82%,
+    rgba(17, 154, 223, 1) 100%
+  );
+}
