@@ -41,7 +41,11 @@ class LightsOut extends Component {
         >
           Restart!{' '}
         </button>{' '}
-        <a href='https://github.com/changexd/portfolio/tree/main/src/LightsOut'>
+        <a
+          href='https://github.com/changexd/portfolio/tree/main/src/LightsOut'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
           <button
             className='d-block  mx-auto my-5 btn p-3 lightsoutbuttons '
             style={{ backgroundColor: '#ff4da6' }}

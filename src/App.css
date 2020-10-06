@@ -56,3 +56,20 @@
     background-color: #61a0f1;
   }
 }
+/* ---------------------BlogPost-------------------- */
+.blogpostfont {
+  font-family: 'Balsamiq Sans', cursive;
+}
+.blogsearch:focus {
+  outline: none;
+}
+/* --------------------------main-------------------------- */
+.mainfont {
+  font-family: 'Sansita Swashed', cursive;
+}
+.nav {
+  font-family: 'Sansita Swashed', cursive;
+}
+.activenav {
+  opacity: 60%;
+}

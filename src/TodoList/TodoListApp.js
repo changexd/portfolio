@@ -85,6 +85,25 @@ class TodoListApp extends Component {
               Click me for the source code!
             </button>
           </a>{' '}
+          <a
+            href='https://medium.com/@darrenwang_1096/利用react-js-state做出可即時更改的todo-list-467c0f28eea8'
+            style={{ color: 'white' }}
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <button
+              href=''
+              className='btn my-5 p-4 todofont section mx-3 '
+              style={{
+                backgroundColor: '#175B8E',
+                color: 'white',
+                fontSize: '30px',
+                boxShadow: '-10px -10px #358ACA ',
+              }}
+            >
+              Tutorial
+            </button>
+          </a>{' '}
         </div>
       </div>
     );

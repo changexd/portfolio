@@ -6,44 +6,53 @@ import TodoListApp from './TodoList/TodoListApp';
 import BlogPost from './BlogPost/BlogPost';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './Header';
 
 class App extends Component {
   render() {
     return (
-      <div className='App'>
-        <div className='container-fluid bg-info'>
-          <ul
-            className=' text-center p-2 mx-auto my-0'
-            style={{ listStyle: 'none' }}
-          >
-            {' '}
-            <li
-              className='d-inline-block m-auto p-3'
-              style={{ fontSize: '30px' }}
-            >
-              Todo List
-            </li>{' '}
-            <li
-              className='d-inline-block m-auto p-3'
-              style={{ fontSize: '30px' }}
-            >
-              Colorbox
-            </li>{' '}
-            <li
-              className='d-inline-block m-auto p-3'
-              style={{ fontSize: '30px' }}
-            >
-              BlogPost
-            </li>
-          </ul>
-        </div>
-        <Switch>
-          <Route exact path='/' render={() => <Main />} />
-          <Route exact path='/TodoList' render={() => <TodoListApp />} />
-          <Route exact path='/LightsOut' render={() => <LightsOut />} />
-          <Route exact path='/BlogPost' render={() => <BlogPost />} />
-        </Switch>
-      </div>
+      <Switch>
+        <Route
+          exact
+          path='/'
+          render={() => (
+            <div>
+              <Header position={'absolute'} />
+              <Main />
+            </div>
+          )}
+        />
+        <Route
+          exact
+          path='/TodoList'
+          render={() => (
+            <div>
+              <Header position={'relative'} />
+              <TodoListApp />
+            </div>
+          )}
+        />
+        <Route
+          exact
+          path='/LightsOut'
+          render={() => (
+            <div>
+              <Header position={'relative'} />
+              <LightsOut />
+            </div>
+          )}
+        />
+        <Route
+          exact
+          path='/BlogPost'
+          render={() => (
+            <div>
+              <Header position={'relative'} />
+              <BlogPost />
+            </div>
+          )}
+        />
+      </Switch>
     );
   }
 }
