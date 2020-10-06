@@ -14,7 +14,7 @@ class App extends Component {
       <Switch>
         <Route
           exact
-          path='/'
+          path={process.env.PUBLIC_URL + '/'}
           render={() => (
             <div>
               <Header position={'absolute'} />
