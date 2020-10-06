@@ -10,11 +10,7 @@ const Header = ({ position }) => {
         className=' text-center p-2 mx-auto my-0 '
         style={{ listStyle: 'none' }}
       >
-        <NavLink
-          exact
-          activeClassName='activenav'
-          to={process.env.PUBLIC_URL + '/'}
-        >
+        <NavLink exact activeClassName='activenav' to='/'>
           <li
             className='d-inline-block m-auto p-3 section'
             style={{ fontSize: '30px', cursor: 'pointer' }}
@@ -22,11 +18,7 @@ const Header = ({ position }) => {
             Home
           </li>{' '}
         </NavLink>{' '}
-        <NavLink
-          exact
-          activeClassName='activenav'
-          to={process.env.PUBLIC_URL + '/todolist'}
-        >
+        <NavLink exact activeClassName='activenav' to='/todolist'>
           <li
             className='d-inline-block m-auto p-3 section'
             style={{ fontSize: '30px', cursor: 'pointer' }}
@@ -34,11 +26,7 @@ const Header = ({ position }) => {
             Todo List
           </li>{' '}
         </NavLink>
-        <NavLink
-          exact
-          activeClassName='activenav'
-          to={process.env.PUBLIC_URL + '/lightsout'}
-        >
+        <NavLink exact activeClassName='activenav' to='/lightsout'>
           <li
             className='d-inline-block m-auto p-3 section'
             style={{ fontSize: '30px', cursor: 'pointer' }}
@@ -46,11 +34,7 @@ const Header = ({ position }) => {
             lightsout
           </li>{' '}
         </NavLink>
-        <NavLink
-          exact
-          activeClassName='activenav'
-          to={process.env.PUBLIC_URL + '/blogpost'}
-        >
+        <NavLink exact activeClassName='activenav' to='/blogpost'>
           <li
             className='d-inline-block m-auto p-3 section'
             style={{ fontSize: '30px', cursor: 'pointer' }}

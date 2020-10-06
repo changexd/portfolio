@@ -14,7 +14,7 @@ class App extends Component {
       <Switch>
         <Route
           exact
-          path={process.env.PUBLIC_URL + '/'}
+          path='/'
           render={() => (
             <div>
               <Header position={'absolute'} />
@@ -24,7 +24,7 @@ class App extends Component {
         />
         <Route
           exact
-          path={process.env.PUBLIC_URL + '/todolist'}
+          path='/TodoList'
           render={() => (
             <div>
               <Header position={'relative'} />
@@ -34,7 +34,7 @@ class App extends Component {
         />
         <Route
           exact
-          path={process.env.PUBLIC_URL + '/lightsout'}
+          path='/LightsOut'
           render={() => (
             <div>
               <Header position={'relative'} />
@@ -44,7 +44,7 @@ class App extends Component {
         />
         <Route
           exact
-          path={process.env.PUBLIC_URL + '/blogpost'}
+          path='/BlogPost'
           render={() => (
             <div>
               <Header position={'relative'} />
