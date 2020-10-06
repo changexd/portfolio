@@ -24,7 +24,7 @@ class App extends Component {
         />
         <Route
           exact
-          path='/TodoList'
+          path={process.env.PUBLIC_URL + '/todolist'}
           render={() => (
             <div>
               <Header position={'relative'} />
@@ -34,7 +34,7 @@ class App extends Component {
         />
         <Route
           exact
-          path='/LightsOut'
+          path={process.env.PUBLIC_URL + '/lightsout'}
           render={() => (
             <div>
               <Header position={'relative'} />
@@ -44,7 +44,7 @@ class App extends Component {
         />
         <Route
           exact
-          path='/BlogPost'
+          path={process.env.PUBLIC_URL + '/blogpost'}
           render={() => (
             <div>
               <Header position={'relative'} />
