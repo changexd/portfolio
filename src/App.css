@@ -4,7 +4,7 @@
   color: white;
 }
 .section:hover {
-  opacity: 90%;
+  opacity: 60%;
 }
 .todobackground {
   background: rgb(17, 154, 223);
