@@ -4,7 +4,7 @@
   color: white;
 }
 .section:hover {
-  opacity: 90%;
+  opacity: 0.6;
 }
 .todobackground {
   background: rgb(17, 154, 223);
@@ -71,5 +71,5 @@
   font-family: 'Sansita Swashed', cursive;
 }
 .activenav {
-  opacity: 90%;
+  opacity: 0.9;
 }
