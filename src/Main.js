@@ -6,15 +6,7 @@ import linkedin from './linkedin.png';
 import resume from './resume.png';
 const Main = () => {
   return (
-    <div
-      className='mainfont'
-      style={{
-        height: '1000px',
-        backgroundImage: `url(${backgroundimage})`,
-        backgroundSize: '100%',
-        backgroundPosition: 'center',
-      }}
-    >
+    <div className='mainfont mainbackground'>
       {' '}
       <div
         className='text-center position-relative'
@@ -24,15 +16,7 @@ const Main = () => {
           transform: 'translate(-50%,-50%)',
         }}
       >
-        <div
-          className='container p-0 position-relative'
-          style={{
-            width: '300px',
-            height: '300px',
-            border: '8px solid #62D886',
-            borderRadius: '100%',
-          }}
-        >
+        <div className='m-auto p-0 position-relative headshot'>
           <img width='100%' src={headshot}></img>
         </div>
         <h1 className='m-3' style={{ color: 'white' }}>

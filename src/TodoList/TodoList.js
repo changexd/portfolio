@@ -76,7 +76,7 @@ class TodoList extends Component {
       );
     } else {
       return (
-        <div className='container my-3'>
+        <div className='container my-3 '>
           <div id={this.state.id}>
             <form
               className='row px-3 py-2'

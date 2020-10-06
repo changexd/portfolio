@@ -16,14 +16,10 @@ const Cell = ({ number, boxes, color, changeColor, col }) => {
         key={col + i}
         id={col + i}
         style={{
-          width: '100px',
-          height: '100px',
-          backgroundColor: `${el == 0 ? 'black' : '#61a0f1'}`,
-          margin: 'auto',
-          border: 'solid 2px white',
-          display: 'inline-block',
           animation: `${el == 0 ? 'null' : randomcolor()}`,
+          backgroundColor: `${el == 0 ? 'black' : '#61a0f1'}`,
         }}
+        className='cell'
       ></div>
     );
   });

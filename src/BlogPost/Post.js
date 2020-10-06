@@ -20,35 +20,18 @@ class Post extends Component {
   }
   render() {
     return (
-      <div
-        className='container m-5 p-0 blogpostfont'
-        style={{
-          width: '350px',
-          height: '400px',
-          display: 'inline-block',
-          position: 'relative',
-        }}
-      >
+      <div className=' m-5 p-0 m-xs-1 blogpostfont PostContainer'>
         <div
+          className='tag'
           data={this.props.tag}
           onClick={this.props.searchwithtagname}
           style={{
-            width: '100px',
-            height: '100px',
-            borderRadius: '100%',
-            position: 'absolute',
-            top: '-50px',
-            left: '-50px',
-            textAlign: 'center',
             backgroundColor: colors[this.state.tag],
-            border: '5px solid #31A0C7',
-            zIndex: '2',
-            cursor: 'pointer',
           }}
         >
           <p
             style={{
-              fontSize: '20px',
+              fontSize: 'auto',
               position: 'relative',
               left: '50%',
               top: '50%',
@@ -58,16 +41,7 @@ class Post extends Component {
             {this.state.tag}
           </p>
         </div>
-        <div
-          className='p-0 '
-          style={{
-            width: '100%',
-            height: '100%',
-            overflow: 'hidden',
-            borderRadius: '15px',
-            border: '10px solid #31A0C7',
-          }}
-        >
+        <div className='p-0 inner ' style={{}}>
           <div
             className='p-0'
             style={{
@@ -78,8 +52,9 @@ class Post extends Component {
             }}
           >
             <img
+              width='100%'
               src={`https://robohash.org/${this.state.userId}`}
-              style={{ position: 'absolute', top: '-50px', left: '0' }}
+              className='robots'
             ></img>
           </div>
           <div

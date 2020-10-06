@@ -32,19 +32,12 @@ class TodoListApp extends Component {
   };
   render() {
     return (
-      <div className='App todobackground p-3'>
+      <div className='App todobackground p-3 todolist'>
         <div
-          className='container  my-3 p-0 position-relative'
-          style={{
-            height: 'auto',
-            width: '700px',
-            backgroundColor: '#175B8E',
-            boxShadow: '-15px -15px #358ACA ',
-          }}
+          className='m-auto   my-3 p-0 position-relative todoform'
+          style={{}}
         >
-          <h1 className='text-center todofont p-3' style={{ fontSize: '60px' }}>
-            Todo List
-          </h1>
+          <h1 className='text-center todofont p-3 todotitle'>Todo List</h1>
           <div className='overflow-auto' style={{ height: '400px' }}>
             {this.state.todo.map((el, i) => {
               return (
@@ -74,13 +67,7 @@ class TodoListApp extends Component {
           >
             <button
               href='https://github.com/changexd/portfolio/tree/main/src/TodoList'
-              className='btn my-5 p-4 todofont section '
-              style={{
-                backgroundColor: '#175B8E',
-                color: 'white',
-                fontSize: '30px',
-                boxShadow: '-10px -10px #358ACA ',
-              }}
+              className='btn my-5 p-4 todofont section todobtn '
             >
               Click me for the source code!
             </button>
@@ -93,13 +80,7 @@ class TodoListApp extends Component {
           >
             <button
               href=''
-              className='btn my-5 p-4 todofont section mx-3 '
-              style={{
-                backgroundColor: '#175B8E',
-                color: 'white',
-                fontSize: '30px',
-                boxShadow: '-10px -10px #358ACA ',
-              }}
+              className='btn my-5 p-4 todofont section mx-3 todobtn '
             >
               Tutorial
             </button>

@@ -26,7 +26,10 @@ class LightsOut extends Component {
   };
   render() {
     return (
-      <div className='App p-2' style={{ backgroundColor: 'black' }}>
+      <div
+        className='App p-2 m-auto lightsout'
+        style={{ backgroundColor: 'black' }}
+      >
         <h1 className='lightsoutfont text-center p-5'>Lights Out Game! </h1>
         <div
           className='container p-2'

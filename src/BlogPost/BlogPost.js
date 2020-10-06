@@ -122,7 +122,7 @@ class BlogPost extends Component {
             </a>
           </div>
         </div>
-        <div className='text-center p-5'>
+        <div className='text-center  p-5'>
           {filtered.map((p, i) => {
             return (
               <Post
