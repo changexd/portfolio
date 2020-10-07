@@ -32,7 +32,7 @@ class TodoListApp extends Component {
   };
   render() {
     return (
-      <div className='App todobackground p-3 todolist'>
+      <div className='App todobackground p-5 todolist'>
         <div
           className='m-auto   my-3 p-0 position-relative todoform'
           style={{}}
@@ -67,7 +67,7 @@ class TodoListApp extends Component {
           >
             <button
               href='https://github.com/changexd/portfolio/tree/main/src/TodoList'
-              className='btn my-5 p-4 todofont section todobtn '
+              className='btn my-5 p-4 todofont section todobtn'
             >
               Click me for the source code!
             </button>
@@ -80,7 +80,7 @@ class TodoListApp extends Component {
           >
             <button
               href=''
-              className='btn my-5 p-4 todofont section mx-3 todobtn '
+              className='btn my-5 p-4 todofont section mx-3 todobtn'
             >
               Tutorial
             </button>

@@ -16,68 +16,91 @@ class Post extends Component {
       title: this.props.title,
       body: this.props.body,
       tag: this.props.tag,
+      hover: false,
     };
+    this.handlehover = this.handlehover.bind(this);
   }
+  handlehover = () => {
+    this.setState({ hover: !this.state.hover });
+  };
   render() {
     return (
       <div className=' m-5 p-0 m-xs-1 blogpostfont PostContainer'>
         <div
-          className='tag'
-          data={this.props.tag}
-          onClick={this.props.searchwithtagname}
+          className='position-absolute '
           style={{
-            backgroundColor: colors[this.state.tag],
+            width: ' 100%',
+            height: ' 100%',
+            top: '0',
+            left: '0',
+            border: '10px dashed #21B97B',
+            display: `${this.state.hover === true ? 'block' : 'none'}`,
           }}
-        >
-          <p
-            style={{
-              fontSize: 'auto',
-              position: 'relative',
-              left: '50%',
-              top: '50%',
-              transform: 'translate(-50%,-50%',
-            }}
-          >
-            {this.state.tag}
-          </p>
-        </div>
-        <div className='p-0 inner ' style={{}}>
+        ></div>
+        <div className='posthover' style={{ width: '100%', height: '100%' }}>
           <div
-            className='p-0'
+            className='tag'
+            data={this.props.tag}
+            onClick={this.props.searchwithtagname}
             style={{
-              height: '60%',
-              overflow: 'hidden',
-              backgroundColor: '#E3E8E6',
-              position: 'relative',
+              backgroundColor: colors[this.state.tag],
             }}
           >
-            <img
-              width='100%'
-              src={`https://robohash.org/${this.state.userId}`}
-              className='robots'
-            ></img>
-          </div>
-          <div
-            className='p-0'
-            style={{
-              height: '40%',
-              backgroundColor: '#C9CFCC',
-              overflow: 'hidden',
-            }}
-          >
-            <p>{this.state.userId}</p>
-            <p>{this.state.title}</p>
             <p
               style={{
-                height: 'auto',
-                maxWidth: '100%',
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-                display: 'block',
+                fontSize: 'auto',
+                position: 'relative',
+                left: '50%',
+                top: '50%',
+                transform: 'translate(-50%,-50%',
               }}
             >
-              {this.state.body}
+              {this.state.tag}
             </p>
+          </div>
+
+          <div
+            className='p-0 inner position-relative  '
+            onMouseEnter={this.handlehover}
+            onMouseLeave={this.handlehover}
+          >
+            <div
+              className='p-0'
+              style={{
+                height: '60%',
+                overflow: 'hidden',
+                backgroundColor: '#E3E8E6',
+                position: 'relative',
+              }}
+            >
+              <img
+                width='100%'
+                src={`https://robohash.org/${this.state.userId}`}
+                className='robots'
+              ></img>
+            </div>
+            <div
+              className='p-0'
+              style={{
+                height: '40%',
+                backgroundColor: '#C9CFCC',
+                overflow: 'hidden',
+              }}
+            >
+              <p>{this.state.userId}</p>
+              <p>{this.state.title}</p>
+              <p
+                style={{
+                  height: 'auto',
+                  maxWidth: '100%',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  display: 'block',
+                }}
+              >
+                {this.state.body}
+              </p>
+            </div>
           </div>
         </div>
       </div>

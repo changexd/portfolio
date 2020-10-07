@@ -44,7 +44,7 @@ class Board extends Component {
   render() {
     console.log(this.state.boxes.flat().filter((el) => el == false).length);
     if (this.state.win == true) {
-      console.log('congrats u win');
+      alert('congrats u win');
     }
     return (
       <div style={{ textAlign: 'center' }}>

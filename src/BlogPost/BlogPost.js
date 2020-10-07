@@ -87,7 +87,10 @@ class BlogPost extends Component {
     });
     console.log(filtered);
     return (
-      <div style={{ backgroundColor: '#88E1AB', minHeight: '1000px' }}>
+      <div
+        className='blogpostbackground'
+        style={{ backgroundColor: '#88E1AB', minHeight: '1000px' }}
+      >
         <div className='container text-center'>
           <h1 className=' p-3 blogpostfont'>Search For the Post!</h1>
           <h2 className=' p-3 blogpostfont'>
