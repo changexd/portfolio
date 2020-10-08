@@ -30,6 +30,41 @@ class LightsOut extends Component {
         className='App p-2 m-auto lightsout'
         style={{ backgroundColor: 'black' }}
       >
+        <div
+          id='popup'
+          className=' p-5'
+          style={{
+            width: '400px',
+            position: 'absolute',
+            textAlign: 'center',
+            top: '50%',
+            left: '5%',
+            transform: 'translate(0,-50%)',
+            zIndex: '99',
+            backgroundColor: 'rgba(255, 255, 255,.8)',
+          }}
+        >
+          {' '}
+          <span
+            onClick={this.props.handleleave}
+            className='p-2'
+            style={{
+              position: 'absolute',
+              right: '1%',
+              top: '1%',
+              cursor: 'pointer',
+            }}
+          >
+            X
+          </span>
+          This is a LightsOut Game, turning off all the lights to win the game!{' '}
+          <br /> You can click on each block and see how they change
+          <br /> 這是一個關燈遊戲，把所有的燈都關掉就獲勝!
+          <br />
+          可以觀察一下方塊之間是如何進行互動的
+          <br />
+          而底下也有原始碼可以參考
+        </div>
         <h1 className='lightsoutfont text-center p-5'>Lights Out Game! </h1>
         <div
           className='container p-2'

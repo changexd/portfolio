@@ -12,7 +12,10 @@ class TodoForms extends Component {
   handleSubmit = (event) => {
     //remember to use preventDefault to stop refreshing site each time we call the function
     event.preventDefault();
-    this.props.UpdateTodo(this.state);
+    this.state.task == '' || this.state.date == ''
+      ? alert('you should not create an empty list!')
+      : this.props.UpdateTodo(this.state);
+
     this.setState({ task: '', date: '', id: uuidv4() });
   };
   //Computed property name

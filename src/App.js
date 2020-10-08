@@ -10,6 +10,13 @@ import Header from './Header';
 
 //Using reactrouter to route the site
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.handleleave = this.handleleave.bind(this);
+  }
+  handleleave = () => {
+    document.querySelector('#popup').style.display = 'none';
+  };
   render() {
     return (
       <Switch>
@@ -29,7 +36,7 @@ class App extends Component {
           render={() => (
             <div>
               <Header position={'relative'} />
-              <TodoListApp />
+              <TodoListApp handleleave={this.handleleave} />
             </div>
           )}
         />
@@ -39,7 +46,7 @@ class App extends Component {
           render={() => (
             <div>
               <Header position={'relative'} />
-              <LightsOut />
+              <LightsOut handleleave={this.handleleave} />
             </div>
           )}
         />
@@ -49,7 +56,7 @@ class App extends Component {
           render={() => (
             <div>
               <Header position={'relative'} />
-              <BlogPost />
+              <BlogPost handleleave={this.handleleave} />
             </div>
           )}
         />

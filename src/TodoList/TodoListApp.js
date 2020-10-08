@@ -6,7 +6,18 @@ class TodoListApp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      todo: [{ task: 'This is an Example', date: '2019/05/07', id: 'example' }],
+      todo: [
+        {
+          task: 'Become a React.js developer',
+          date: '2020/10/30',
+          id: 'example',
+        },
+        {
+          task: 'Work in an awesome company!',
+          date: '2020/11/30',
+          id: 'example1',
+        },
+      ],
     };
     this.UpdateTodo = this.UpdateTodo.bind(this);
     this.DeleteTodo = this.DeleteTodo.bind(this);
@@ -34,6 +45,42 @@ class TodoListApp extends Component {
   render() {
     return (
       <div className='App todobackground p-5 todolist'>
+        <div
+          className=' p-5'
+          id='popup'
+          style={{
+            width: '400px',
+            position: 'absolute',
+            textAlign: 'center',
+            top: '50%',
+            left: '5%',
+            transform: 'translate(0,-50%)',
+            zIndex: '99',
+            backgroundColor: 'rgba(255, 255, 255,.4)',
+          }}
+        >
+          {' '}
+          <span
+            onClick={this.props.handleleave}
+            className='p-2'
+            style={{
+              position: 'absolute',
+              right: '1%',
+              top: '1%',
+              cursor: 'pointer',
+            }}
+          >
+            X
+          </span>
+          This is a demonstration of how a child state passes to its parent{' '}
+          <br /> You can try creating a new task and edit it or even delete it
+          just like you normally do on Facebook!
+          <br />{' '}
+          這是用來展示child如何將state傳送至parent，你可以創建一個新的項目，並按下X或是edit去做如同臉書留言般即時的更動!
+          <br />
+          <br />
+          而底下也有原始碼與medium詳解可以閱讀
+        </div>
         <div
           className='m-auto   my-3 p-0 position-relative todoform'
           style={{}}

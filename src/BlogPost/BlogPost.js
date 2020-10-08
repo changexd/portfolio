@@ -72,6 +72,7 @@ class BlogPost extends Component {
   searchwithtagname = (event) => {
     this.setState({ searcharea: event.target.textContent });
   };
+
   render() {
     // Use array.filter() to display elements that match texts in this.state.searcharea
     const filtered = this.state.post
@@ -109,12 +110,45 @@ class BlogPost extends Component {
         className='blogpostbackground'
         style={{ backgroundColor: '#88E1AB', minHeight: '1000px' }}
       >
+        {' '}
+        <div
+          id='popup'
+          className=' p-5'
+          style={{
+            width: '400px',
+            position: 'fixed',
+            textAlign: 'center',
+            top: '50%',
+            left: '5%',
+            transform: 'translate(0,-50%)',
+            zIndex: '99',
+            backgroundColor: 'rgba(255, 255, 255,.9)',
+          }}
+        >
+          <span
+            onClick={this.props.handleleave}
+            className='p-2'
+            style={{
+              position: 'absolute',
+              right: '1%',
+              top: '1%',
+              cursor: 'pointer',
+            }}
+          >
+            X
+          </span>
+          This is a demonstration of how you can make a search function using
+          React states. <br /> Try and search something or even click on the tag
+          to see the magic!
+          <br /> 這個頁面利用了Axios串接假的貼文API，而搜尋則是應用了React
+          state的變更進行即時的render，你可以試著搜尋些關鍵字甚至是點擊貼文左上角的小圈圈!
+          <br />
+          <br />
+          而搜尋方塊下方也有原始碼與medium詳解可以閱讀
+        </div>
         <div className='container text-center'>
           <h1 className=' p-3 blogpostfont'>Search For the Post!</h1>
-          <h2 className=' p-3 blogpostfont'>
-            {' '}
-            &#40;you can try clicking on the tag!&#41;
-          </h2>
+
           <label className=' p-3 blogpostfont' style={{ fontSize: '25px' }}>
             Search:
           </label>
