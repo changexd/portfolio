@@ -149,6 +149,20 @@ class BlogPost extends Component {
               {' '}
               More Posts!
             </button>
+            <a
+              href='https://medium.com/@darrenwang_1096/利用react-js來做具有搜尋功能的部落格吧-71aaa7b0740d'
+              target='_blank'
+              rel='noopener noreferrer'
+              className=' m-auto w-auto '
+            >
+              <button
+                class='btn  p-3 blogpostfont section m-3'
+                style={{ backgroundColor: '#31A0C7' }}
+              >
+                {' '}
+                Tutorial
+              </button>
+            </a>
           </div>
         </div>
         <div className='text-center  p-5'>
