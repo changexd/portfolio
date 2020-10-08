@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-// 依照tag分顯示顏色
+// Give different tags different color
 let colors = {
   Fashion: '#81CAF4',
   LifeStyle: '#8AE17A ',
@@ -25,7 +25,11 @@ class Post extends Component {
   };
   render() {
     return (
-      <div className=' m-5 p-0 m-xs-1 blogpostfont PostContainer'>
+      <div
+        className=' m-5 p-0 m-xs-1 blogpostfont PostContainer'
+        onMouseEnter={this.handlehover}
+        onMouseLeave={this.handlehover}
+      >
         <div
           className='position-absolute '
           style={{
@@ -34,7 +38,8 @@ class Post extends Component {
             top: '0',
             left: '0',
             border: '10px dashed #21B97B',
-            display: `${this.state.hover === true ? 'block' : 'none'}`,
+            opacity: `${this.state.hover === true ? '100%' : '0%'}`,
+            transition: 'ease-in 0.2s',
           }}
         ></div>
         <div className='posthover' style={{ width: '100%', height: '100%' }}>
@@ -52,18 +57,14 @@ class Post extends Component {
                 position: 'relative',
                 left: '50%',
                 top: '50%',
-                transform: 'translate(-50%,-50%',
+                transform: 'translate(-50%,-50%)',
               }}
             >
               {this.state.tag}
             </p>
           </div>
 
-          <div
-            className='p-0 inner position-relative  '
-            onMouseEnter={this.handlehover}
-            onMouseLeave={this.handlehover}
-          >
+          <div className='p-0 inner position-relative  '>
             <div
               className='p-0'
               style={{

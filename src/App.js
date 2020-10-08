@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 import Main from './Main';
 import LightsOut from './LightsOut/LightsOut';
 import TodoListApp from './TodoList/TodoListApp';
@@ -8,6 +8,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Header';
 
+//Using reactrouter to route the site
 class App extends Component {
   render() {
     return (

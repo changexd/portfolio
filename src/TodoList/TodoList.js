@@ -2,27 +2,27 @@ import React, { Component } from 'react';
 class TodoList extends Component {
   constructor(props) {
     super(props);
-    //這裡把todo array裡個別的state繼承過來
+    //Inherit states from parent
     this.state = {
       task: this.props.task,
       date: this.props.date,
       edit: false,
       id: this.props.id,
     };
-    //一定要記得bind function
+    //Don't forget to bind function
     this.handleChange = this.handleChange.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
     this.handleDoneSubmit = this.handleDoneSubmit.bind(this);
   }
-  //利用computed property names
+  //Using computed property name so we don't have to create new functions
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
-  //edit的開關
+  //switch for edit
   handleEdit = () => {
     this.setState({ edit: !this.state.edit });
   };
-  //將這個項目的state回傳至parent
+  //send data of this child state to parent
   handleDoneSubmit = (event) => {
     const submitDate = this.state;
     this.setState({ edit: !this.state.edit });

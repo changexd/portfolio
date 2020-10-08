@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import headshot from './headshot.png';
-import backgroundimage from './background.jpg';
-import fbicon from './facebook.png';
-import linkedin from './linkedin.png';
-import resume from './resume.png';
+
 const Main = () => {
   return (
     <div className='mainfont mainbackground'>

@@ -4,18 +4,18 @@ import { v4 as uuidv4 } from 'uuid';
 class TodoForms extends Component {
   constructor(props) {
     super(props);
-    //這邊利用uuid產生unique id方便做filter用
+    //Using uuid to generate a unique key
     this.state = { task: '', date: '', id: uuidv4() };
     this.OnHandleChange = this.OnHandleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleSubmit = (event) => {
-    //這邊要記得利用preventDefault才不會每次submit後都refresh頁面
+    //remember to use preventDefault to stop refreshing site each time we call the function
     event.preventDefault();
     this.props.UpdateTodo(this.state);
     this.setState({ task: '', date: '', id: uuidv4() });
   };
-
+  //Computed property name
   OnHandleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };

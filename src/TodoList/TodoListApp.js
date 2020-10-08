@@ -14,6 +14,7 @@ class TodoListApp extends Component {
   UpdateTodo = (item) => {
     this.setState({ todo: [...this.state.todo, item] });
   };
+  //find out this component and change its state
   EditTodo = (eventid, newState) => {
     const editTarget = this.state.todo.findIndex(
       (target) => target.id === eventid
@@ -23,7 +24,7 @@ class TodoListApp extends Component {
     temptodo[editTarget] = edited;
     this.setState({ todo: temptodo });
   };
-
+  //using regexp to find the target(regexp is unecessary though, just wanted to practice)
   DeleteTodo = (event) => {
     const regexp = new RegExp(event.target.parentNode.id, 'g');
     const temptodo = this.state.todo.filter((ele) => !ele.id.match(regexp));

@@ -3,7 +3,7 @@ import Post from './Post';
 const axios = require('axios');
 const faker = require('faker');
 
-// 由於Fake API沒有tag 所以這裡給予隨機tag
+//Randomly generate Tags for each post
 function faketag() {
   const randomnumber = Math.floor(Math.random() * 4);
   switch (randomnumber) {
@@ -22,7 +22,6 @@ function faketag() {
   }
 }
 
-console.log(faketag());
 class BlogPost extends Component {
   static defaultProps = {
     numPost: 10,
@@ -41,13 +40,17 @@ class BlogPost extends Component {
       this.getPosts();
     }
   }
-  // 利用axios 抓取 fake post API 並加入至原本state array裡面
+  // Using Axios to fetch API and join the original array in the state.post
   async getPosts() {
     let currentPostNum = this.state.post.length;
-    let response = await axios.get(
-      'https://jsonplaceholder.typicode.com/posts'
-    );
-    // 這裡本來是拿來做下一頁用
+    let response = await axios
+      .get('https://jsonplaceholder.typicode.com/posts')
+      // A very tiny error handling here
+      .catch((err) => {
+        console.log(err.message);
+        this.setState({ post: [] });
+      });
+    // This was for loading more posts
     let updatedPosts = this.state.post.concat(
       response.data.slice(currentPostNum, currentPostNum + 10)
     );
@@ -58,34 +61,49 @@ class BlogPost extends Component {
     this.setState({ post: updatedPosts });
     console.log(updatedPosts);
   }
+  //adding more post with the button
   handleClick = () => {
     this.getPosts();
   };
   handleChange = (event) => {
     this.setState({ searcharea: event.target.value });
   };
+  //This function is for click the tag and search by the tag
   searchwithtagname = (event) => {
     this.setState({ searcharea: event.target.textContent });
   };
   render() {
-    // 這裡利用array.filter()去顯示與searcharea相符的文章
-    const filtered = this.state.post.filter((post) => {
-      return (
-        post.userId
-          .toLowerCase()
-          .includes(this.state.searcharea.toLocaleLowerCase()) ||
-        post.title
-          .toLowerCase()
-          .includes(this.state.searcharea.toLocaleLowerCase()) ||
-        post.tag
-          .toLowerCase()
-          .includes(this.state.searcharea.toLocaleLowerCase()) ||
-        post.body
-          .toLowerCase()
-          .includes(this.state.searcharea.toLocaleLowerCase())
-      );
-    });
-    console.log(filtered);
+    // Use array.filter() to display elements that match texts in this.state.searcharea
+    const filtered = this.state.post
+      .filter((post) => {
+        return (
+          post.userId
+            .toLowerCase()
+            .includes(this.state.searcharea.toLocaleLowerCase()) ||
+          post.title
+            .toLowerCase()
+            .includes(this.state.searcharea.toLocaleLowerCase()) ||
+          post.tag
+            .toLowerCase()
+            .includes(this.state.searcharea.toLocaleLowerCase()) ||
+          post.body
+            .toLowerCase()
+            .includes(this.state.searcharea.toLocaleLowerCase())
+        );
+      })
+      .map((p, i) => {
+        return (
+          <Post
+            key={p.id}
+            userId={p.userId}
+            title={p.title}
+            body={p.body}
+            tag={p.tag}
+            searchwithtagname={this.searchwithtagname}
+          />
+        );
+      });
+
     return (
       <div
         className='blogpostbackground'
@@ -116,28 +134,38 @@ class BlogPost extends Component {
               className=' m-auto w-auto '
             >
               <button
-                class='btn  p-3 blogpostfont section m-0'
+                class='btn  p-3 blogpostfont section m-3'
                 style={{ backgroundColor: '#31A0C7' }}
               >
                 {' '}
                 Click here for the source code!
               </button>
             </a>
+            <button
+              class='btn  p-3 blogpostfont section m-3'
+              style={{ backgroundColor: '#31A0C7' }}
+              onClick={this.handleClick}
+            >
+              {' '}
+              More Posts!
+            </button>
           </div>
         </div>
         <div className='text-center  p-5'>
-          {filtered.map((p, i) => {
-            return (
-              <Post
-                key={p.id}
-                userId={p.userId}
-                title={p.title}
-                body={p.body}
-                tag={p.tag}
-                searchwithtagname={this.searchwithtagname}
-              />
-            );
-          })}
+          {/* In case of loading too long, the loading section is added */}
+          {this.state.post.length < 1 ? (
+            <div className='blogpostfont' style={{ fontSize: '25px' }}>
+              Loading...
+              <div class='lds-ring' style={{ verticalAlign: 'middle' }}>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+          ) : (
+            <div>{filtered}</div>
+          )}
         </div>
       </div>
     );

@@ -14,14 +14,14 @@ class Board extends Component {
   }
 
   changeColor(event) {
-    // 第一步:先將目標方塊的座標取出
+    // First step:capture the coordinates of the target box
     const targetId = event.target.id;
     const coor = targetId.split('');
     const box = this.state.boxes;
     const y = parseInt(coor[0]);
     const x = parseInt(coor[1]);
     const newBoxesValue = [...this.state.boxes];
-    // 第二步:確認座標上下左右是否超出範圍，並將其關閉
+    // Second step: make sure boxes around are inside the board
     function flipCell(y, x) {
       if (x >= 0 && x < 5 && y >= 0 && y < 5) {
         box[y][x] = !box[y][x];
@@ -34,7 +34,7 @@ class Board extends Component {
     flipCell(y - 1, x); //flip below
     flipCell(y + 1, x); //flip above
     let win = box.every((row) => row.every((cell) => !cell));
-    // 最後回傳至state
+    // send newboxes to state
     this.setState({
       boxes: box,
       win: win,
@@ -42,6 +42,7 @@ class Board extends Component {
   }
 
   render() {
+    //just a small alert if you win the game
     console.log(this.state.boxes.flat().filter((el) => el == false).length);
     if (this.state.win == true) {
       alert('congrats u win');
