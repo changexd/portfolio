@@ -1,27 +1,26 @@
 import React, { Component } from 'react';
 import Board from './Board';
 import { v4 as uuidv4 } from 'uuid';
+function generatenewboxes() {
+  return new Array(5).fill('').map((el) => {
+    return new Array(5).fill().map((el) => {
+      return Math.random() >= 0.5;
+    });
+  });
+}
 
 /** Simple app that just shows the LightsOut game. */
 class LightsOut extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      boxes: new Array(5).fill('').map((el) => {
-        return new Array(5).fill().map((el) => {
-          return Math.random() >= 0.5;
-        });
-      }),
+      boxes: generatenewboxes(),
     };
     this.restart = this.restart.bind(this);
   }
   restart = () => {
     this.setState({
-      boxes: new Array(5).fill('').map((el) => {
-        return new Array(5).fill().map((el) => {
-          return Math.random() >= 0.5;
-        });
-      }),
+      boxes: generatenewboxes(),
     });
   };
   render() {
