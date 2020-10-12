@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import React, {Component} from 'react';
+import {Switch, Route, Link} from 'react-router-dom';
 import Main from './Main';
 import LightsOut from './LightsOut/LightsOut';
 import TodoListApp from './TodoList/TodoListApp';
+import TodoListHookedApp from './TodoListHooked/TodoListHookedApp';
 import BlogPost from './BlogPost/BlogPost';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -37,6 +38,16 @@ class App extends Component {
             <div>
               <Header position={'relative'} />
               <TodoListApp handleleave={this.handleleave} />
+            </div>
+          )}
+        />
+        <Route
+          exact
+          path='/TodoListHooked'
+          render={() => (
+            <div>
+              <Header position={'relative'} />
+              <TodoListHookedApp handleleave={this.handleleave} />
             </div>
           )}
         />

@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import {NavLink} from 'react-router-dom';
 import TodoList from './TodoList';
 import TodoForms from './TodoForms';
 
@@ -23,7 +24,7 @@ class TodoListApp extends Component {
     this.DeleteTodo = this.DeleteTodo.bind(this);
   }
   UpdateTodo = (item) => {
-    this.setState({ todo: [...this.state.todo, item] });
+    this.setState({todo: [...this.state.todo, item]});
   };
   //find out this component and change its state
   EditTodo = (eventid, newState) => {
@@ -33,13 +34,13 @@ class TodoListApp extends Component {
     const edited = newState;
     const temptodo = [...this.state.todo];
     temptodo[editTarget] = edited;
-    this.setState({ todo: temptodo });
+    this.setState({todo: temptodo});
   };
   //using regexp to find the target(regexp is unecessary though, just wanted to practice)
   DeleteTodo = (event) => {
     const regexp = new RegExp(event.target.parentNode.id, 'g');
     const temptodo = this.state.todo.filter((ele) => !ele.id.match(regexp));
-    this.setState({ todo: temptodo });
+    this.setState({todo: temptodo});
     console.log(this.state.todo);
   };
   render() {
@@ -79,14 +80,15 @@ class TodoListApp extends Component {
           這是用來展示child如何將state傳送至parent，你可以創建一個新的項目，並按下X或是edit去做如同臉書留言般即時的更動!
           <br />
           <br />
-          而底下也有原始碼與medium詳解可以閱讀
+          而底下也有原始碼與medium詳解可以閱讀 點擊Hooked來看利用React Hook
+          製作的吧!
         </div>
         <div
           className='m-auto   my-3 p-0 position-relative todoform'
           style={{}}
         >
           <h1 className='text-center todofont p-3 todotitle'>Todo List</h1>
-          <div className='overflow-auto' style={{ height: '400px' }}>
+          <div className='overflow-auto' style={{height: '400px'}}>
             {this.state.todo.map((el, i) => {
               return (
                 <TodoList
@@ -109,7 +111,7 @@ class TodoListApp extends Component {
           {' '}
           <a
             href='https://github.com/changexd/portfolio/tree/main/src/TodoList'
-            style={{ color: 'white' }}
+            style={{color: 'white'}}
             target='_blank'
             rel='noopener noreferrer'
           >
@@ -122,7 +124,7 @@ class TodoListApp extends Component {
           </a>{' '}
           <a
             href='https://medium.com/@darrenwang_1096/利用react-js-state做出可即時更改的todo-list-467c0f28eea8'
-            style={{ color: 'white' }}
+            style={{color: 'white'}}
             target='_blank'
             rel='noopener noreferrer'
           >
@@ -133,6 +135,14 @@ class TodoListApp extends Component {
               Tutorial
             </button>
           </a>{' '}
+          <NavLink exact to='/TodoListHooked'>
+            <button
+              href=''
+              className='btn my-5 p-4 todofont section mx-3 todobtn'
+            >
+              Hooked
+            </button>
+          </NavLink>{' '}
         </div>
       </div>
     );
