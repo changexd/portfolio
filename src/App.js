@@ -7,6 +7,7 @@ import TodoListApp from './TodoList/TodoListApp';
 import TodoListHookedApp from './TodoListHooked/TodoListHookedApp';
 import BlogPost from './BlogPost/BlogPost';
 import Comment from './Comment/Comment';
+import MessageBox from './MessageBox/MessageBox';
 //Redux
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
@@ -90,6 +91,15 @@ class App extends Component {
               <Provider store={commentStore}>
                 <Comment handleleave={this.handleleave} />
               </Provider>
+            </div>
+          )}
+        />
+        <Route
+          path='/MessageBox/'
+          render={() => (
+            <div>
+              <Header position={'relative'} />
+              <MessageBox handleleave={this.handleleave} />
             </div>
           )}
         />

@@ -1,9 +1,9 @@
 import React from 'react';
-import UseInputChange from '../GeneralFunction/useInputChange';
+import useInputChange from '../GeneralFunction/useInputChange';
 import UseResponseState from './hooks/UseResponseState';
 //Use Hook to connect its response to its parent
 function ResponseForm({AddResponse, ToggleRespond}) {
-  const [response, HandleChange, ResetResponse] = UseInputChange('');
+  const [response, HandleChange, ResetResponse] = useInputChange('');
 
   const responseInput = {
     width: '70%',
@@ -40,7 +40,7 @@ function ResponseForm({AddResponse, ToggleRespond}) {
           style={responseInput}
           placeholder='在此輸入留言...'
           value={response}
-          onChange={(event) => HandleChange(event.target.value)}
+          onChange={(event) => HandleChange(event)}
         ></input>{' '}
         <button type='submit' style={responseSubmission}>
           ▶

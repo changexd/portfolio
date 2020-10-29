@@ -3,7 +3,6 @@ import MessageForm from './MessageForm';
 import MessageBoard from './MessageBoard';
 import {connect} from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
 import Card from '@material-ui/core/Card';
 import {styled} from '@material-ui/core/styles';
 
@@ -28,7 +27,7 @@ const mapStateToProps = (state) => {
   return {message: state.message};
 };
 
-class App extends Component {
+class Comment extends Component {
   render() {
     return (
       <div className='text-center container'>
@@ -41,4 +40,4 @@ class App extends Component {
   }
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps)(Comment);

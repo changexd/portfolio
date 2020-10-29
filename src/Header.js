@@ -50,6 +50,14 @@ const Header = ({position}) => {
         >
           <li>Comment</li>
         </NavLink>
+        <NavLink
+          exact
+          activeClassName='activenav'
+          className='d-inline-block m-auto p-xs-1 p-3 section nav'
+          to='/MessageBox'
+        >
+          <li>MessageBox</li>
+        </NavLink>
       </ul>
     </div>
   );
