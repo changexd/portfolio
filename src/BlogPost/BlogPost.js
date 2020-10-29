@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Post from './Post';
 const axios = require('axios');
 const faker = require('faker');
@@ -28,7 +28,8 @@ class BlogPost extends Component {
   };
   constructor(props) {
     super(props);
-    this.state = { post: [], searcharea: '' };
+    this.state = {post: [], searcharea: '', prevY: 0};
+    this.scrollRef = React.createRef();
     this.getPosts = this.getPosts.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -36,9 +37,28 @@ class BlogPost extends Component {
   }
 
   componentDidMount() {
-    if (this.state.post.length === 0) {
+    if (this.state.post.length < 1) {
       this.getPosts();
     }
+    var options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 1.0,
+    };
+
+    this.observer = new IntersectionObserver(
+      this.handleObserver.bind(this),
+      options
+    );
+    this.observer.observe(this.scrollRef);
+  }
+  handleObserver(entities, observer) {
+    const y = entities[0].boundingClientRect.y;
+    console.log(y);
+    if (this.state.prevY > y) {
+      this.getPosts();
+    }
+    this.setState({prevY: y});
   }
   // Using Axios to fetch API and join the original array in the state.post
   async getPosts() {
@@ -48,7 +68,7 @@ class BlogPost extends Component {
       // A very tiny error handling here
       .catch((err) => {
         console.log(err.message);
-        this.setState({ post: [] });
+        this.setState({post: []});
       });
     // This was for loading more posts
     let updatedPosts = this.state.post.concat(
@@ -58,7 +78,7 @@ class BlogPost extends Component {
       element.tag = faketag();
       element.userId = faker.name.findName();
     });
-    this.setState({ post: updatedPosts });
+    this.setState({post: updatedPosts});
     console.log(updatedPosts);
   }
   //adding more post with the button
@@ -66,11 +86,11 @@ class BlogPost extends Component {
     this.getPosts();
   };
   handleChange = (event) => {
-    this.setState({ searcharea: event.target.value });
+    this.setState({searcharea: event.target.value});
   };
   //This function is for click the tag and search by the tag
   searchwithtagname = (event) => {
-    this.setState({ searcharea: event.target.textContent });
+    this.setState({searcharea: event.target.textContent});
   };
 
   render() {
@@ -108,7 +128,7 @@ class BlogPost extends Component {
     return (
       <div
         className='blogpostbackground'
-        style={{ backgroundColor: '#88E1AB', minHeight: '1000px' }}
+        style={{backgroundColor: '#88E1AB', minHeight: '1000px'}}
       >
         {' '}
         <div
@@ -149,7 +169,7 @@ class BlogPost extends Component {
         <div className='container text-center'>
           <h1 className=' p-3 blogpostfont'>Search For the Post!</h1>
 
-          <label className=' p-3 blogpostfont' style={{ fontSize: '25px' }}>
+          <label className=' p-3 blogpostfont' style={{fontSize: '25px'}}>
             Search:
           </label>
           <input
@@ -157,7 +177,7 @@ class BlogPost extends Component {
             className='m-auto p-2 blogsearch'
             type='text'
             placeholder='Search for the event'
-            style={{ borderRadius: '15px', border: '3px solid #31A0C7' }}
+            style={{borderRadius: '15px', border: '3px solid #31A0C7'}}
             value={this.state.searcharea}
           ></input>
           <div className='d-block'>
@@ -169,7 +189,7 @@ class BlogPost extends Component {
             >
               <button
                 class='btn  p-3 blogpostfont section m-3'
-                style={{ backgroundColor: '#31A0C7' }}
+                style={{backgroundColor: '#31A0C7'}}
               >
                 {' '}
                 Click here for the source code!
@@ -177,7 +197,7 @@ class BlogPost extends Component {
             </a>
             <button
               class='btn  p-3 blogpostfont section m-3'
-              style={{ backgroundColor: '#31A0C7' }}
+              style={{backgroundColor: '#31A0C7'}}
               onClick={this.handleClick}
             >
               {' '}
@@ -191,7 +211,7 @@ class BlogPost extends Component {
             >
               <button
                 class='btn  p-3 blogpostfont section m-3'
-                style={{ backgroundColor: '#31A0C7' }}
+                style={{backgroundColor: '#31A0C7'}}
               >
                 {' '}
                 Tutorial
@@ -202,9 +222,9 @@ class BlogPost extends Component {
         <div className='text-center  p-5'>
           {/* In case of loading too long, the loading section is added */}
           {this.state.post.length < 1 ? (
-            <div className='blogpostfont' style={{ fontSize: '25px' }}>
+            <div className='blogpostfont' style={{fontSize: '25px'}}>
               Loading...
-              <div class='lds-ring' style={{ verticalAlign: 'middle' }}>
+              <div class='lds-ring' style={{verticalAlign: 'middle'}}>
                 <div></div>
                 <div></div>
                 <div></div>
@@ -214,6 +234,12 @@ class BlogPost extends Component {
           ) : (
             <div>{filtered}</div>
           )}
+          <div
+            ref={(ref) => (this.scrollRef = ref)}
+            style={{height: '100px', margin: '30px'}}
+          >
+            <span>Loading...</span>
+          </div>
         </div>
       </div>
     );
