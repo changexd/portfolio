@@ -1,13 +1,23 @@
 import React, {Component} from 'react';
 import {Switch, Route, Link} from 'react-router-dom';
+//Components
 import Main from './Main';
 import LightsOut from './LightsOut/LightsOut';
 import TodoListApp from './TodoList/TodoListApp';
 import TodoListHookedApp from './TodoListHooked/TodoListHookedApp';
 import BlogPost from './BlogPost/BlogPost';
+import Comment from './Comment/Comment';
+//Redux
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+import {MessageBoardReducer} from './Comment/redux/reducers';
+//CSS
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Header';
+
+//store
+const commentStore = createStore(MessageBoardReducer);
 
 //Using reactrouter to route the site
 class App extends Component {
@@ -68,6 +78,18 @@ class App extends Component {
             <div>
               <Header position={'relative'} />
               <BlogPost handleleave={this.handleleave} />
+            </div>
+          )}
+        />
+        <Route
+          exact
+          path='/Comment'
+          render={() => (
+            <div>
+              <Header position={'relative'} />
+              <Provider store={commentStore}>
+                <Comment handleleave={this.handleleave} />
+              </Provider>
             </div>
           )}
         />
