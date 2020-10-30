@@ -3,7 +3,6 @@ import ResponseApp from './ResponseApp';
 import {connect} from 'react-redux';
 import {DeleteMessage} from './redux/actions';
 import Container from '@material-ui/core/Container';
-import Button from '@material-ui/core/Button';
 import {styled} from '@material-ui/core/styles';
 
 //Each Message has it's own response
@@ -12,6 +11,7 @@ import {styled} from '@material-ui/core/styles';
 const mapDispatchToProps = (dispatch) => {
   return {OnDeleteMessage: (event) => dispatch(DeleteMessage(event))};
 };
+//Styled Components
 const replyButton = {
   color: 'white',
   position: 'absolute',
@@ -55,7 +55,6 @@ class Message extends Component {
   HandleDelete = (event) =>
     this.props.OnDeleteMessage(event.target.parentNode.id);
   render() {
-    console.log(this.props.message);
     return (
       <MessageContainer id={this.props.message.id}>
         <ContentContainer id={this.props.message.id}>

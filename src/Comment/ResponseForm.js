@@ -1,6 +1,5 @@
 import React from 'react';
 import useInputChange from '../GeneralFunction/useInputChange';
-import UseResponseState from './hooks/UseResponseState';
 //Use Hook to connect its response to its parent
 function ResponseForm({AddResponse, ToggleRespond}) {
   const [response, HandleChange, ResetResponse] = useInputChange('');
@@ -32,7 +31,6 @@ function ResponseForm({AddResponse, ToggleRespond}) {
             AddResponse(response);
             ResetResponse();
             ToggleRespond();
-            console.log(response);
           }
         }}
       >

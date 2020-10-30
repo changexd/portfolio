@@ -24,6 +24,7 @@ const MessageFormContainer = styled(Container)({
   borderBottomStyle: 'solid ',
   border: '3px black',
 });
+
 class MessageForm extends Component {
   constructor(props) {
     super(props);

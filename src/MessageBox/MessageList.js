@@ -29,6 +29,22 @@ const InfoContainer = styled(Container)({
   borderTop: 'none',
   backgroundColor: 'inherit',
 });
+const MessagePreview = {
+  textAlign: 'left',
+  margin: '0',
+  textOverflow: 'ellipsis',
+  height: '100%',
+  overflow: 'hidden',
+  whiteSpace: 'nowrap',
+  letterSpacing: '2px',
+};
+const MessageTitle = {
+  fontSize: '17px',
+  fontWeight: 'bold',
+  float: 'left',
+  margin: '0',
+};
+////////////////////////////////
 function MessageList({
   SetMessageStateWithLink,
   message,
@@ -66,33 +82,11 @@ function MessageList({
               }}
             >
               <div style={{height: '50%'}}>
-                <p
-                  style={{
-                    fontSize: '17px',
-                    fontWeight: 'bold',
-                    float: 'left',
-                    margin: '0',
-                  }}
-                >
-                  {example.from}
-                </p>
+                <p style={MessageTitle}>{example.from}</p>
                 <p style={{float: 'right', margin: '0'}}>{example.date}</p>
               </div>
               <div style={{height: '50%'}}>
-                <p
-                  style={{
-                    textAlign: 'left',
-                    margin: '0',
-                    textOverflow: 'ellipsis',
-                    height: '100%',
-                    overflow: 'hidden',
-                    whiteSpace: 'nowrap',
-                    letterSpacing: '2px',
-                  }}
-                >
-                  {' '}
-                  {example.message}
-                </p>
+                <p style={MessagePreview}> {example.message}</p>
               </div>
             </InfoContainer>
           </NavLink>

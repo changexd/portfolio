@@ -38,7 +38,7 @@ function MessageText({message, from}) {
   return (
     <MessageTextContainer>
       <TextHeader>
-        <TextTitle style={{}}>{from}</TextTitle>
+        <TextTitle>{from}</TextTitle>
       </TextHeader>
       <ContentContainer>{message}</ContentContainer>
     </MessageTextContainer>
