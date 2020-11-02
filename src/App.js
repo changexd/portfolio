@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {Switch, Route, Link} from 'react-router-dom';
+import {Switch, Route} from 'react-router-dom';
 //Components
+import Header from './Header';
 import Main from './Main';
 import LightsOut from './LightsOut/LightsOut';
 import TodoListApp from './TodoList/TodoListApp';
@@ -15,7 +16,6 @@ import {MessageBoardReducer} from './Comment/redux/reducers';
 //CSS
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from './Header';
 
 //store
 const commentStore = createStore(MessageBoardReducer);
@@ -30,79 +30,88 @@ class App extends Component {
     document.querySelector('#popup').style.display = 'none';
   };
   render() {
+    const routes = [
+      {path: '/', app: <Main />, absoluteHeader: true, store: '', exact: true},
+      {
+        path: '/TodoList',
+        app: <TodoListApp handleleave={this.handleleave} />,
+        absoluteHeader: false,
+        store: '',
+        exact: true,
+      },
+      {
+        path: '/TodoListHooked',
+        app: <TodoListHookedApp handleleave={this.handleleave} />,
+        absoluteHeader: false,
+        store: '',
+        exact: true,
+      },
+      {
+        path: '/LightsOut',
+        app: <LightsOut handleleave={this.handleleave} />,
+        absoluteHeader: false,
+        store: '',
+        exact: true,
+      },
+      {
+        path: '/BlogPost',
+        app: <BlogPost handleleave={this.handleleave} />,
+        absoluteHeader: false,
+        store: '',
+        exact: true,
+      },
+      {
+        path: '/Comment',
+        app: <Comment handleleave={this.handleleave} />,
+        absoluteHeader: false,
+        store: commentStore,
+        exact: true,
+      },
+      {
+        path: '/MessageBox/',
+        app: <MessageBox handleleave={this.handleleave} />,
+        absoluteHeader: false,
+        store: '',
+        exact: false,
+      },
+    ];
+
     return (
       <Switch>
-        <Route
-          exact
-          path='/'
-          render={() => (
-            <div>
-              <Header position={'absolute'} />
-              <Main />
-            </div>
-          )}
-        />
-        <Route
-          exact
-          path='/TodoList'
-          render={() => (
-            <div>
-              <Header position={'relative'} />
-              <TodoListApp handleleave={this.handleleave} />
-            </div>
-          )}
-        />
-        <Route
-          exact
-          path='/TodoListHooked'
-          render={() => (
-            <div>
-              <Header position={'relative'} />
-              <TodoListHookedApp handleleave={this.handleleave} />
-            </div>
-          )}
-        />
-        <Route
-          exact
-          path='/LightsOut'
-          render={() => (
-            <div>
-              <Header position={'relative'} />
-              <LightsOut handleleave={this.handleleave} />
-            </div>
-          )}
-        />
-        <Route
-          exact
-          path='/BlogPost'
-          render={() => (
-            <div>
-              <Header position={'relative'} />
-              <BlogPost handleleave={this.handleleave} />
-            </div>
-          )}
-        />
-        <Route
-          exact
-          path='/Comment'
-          render={() => (
-            <div>
-              <Header position={'relative'} />
-              <Provider store={commentStore}>
-                <Comment handleleave={this.handleleave} />
-              </Provider>
-            </div>
-          )}
-        />
-        <Route
-          path='/MessageBox/'
-          render={() => (
-            <div>
-              <Header position={'relative'} />
-              <MessageBox handleleave={this.handleleave} />
-            </div>
-          )}
-        />
+        {routes.map((route) => {
+          if (route.exact) {
+            return (
+              <Route
+                exact
+                path={route.path}
+                render={() => (
+                  <div>
+                    <Header
+                      position={route.absoluteHeader ? 'absolute' : 'relative'}
+                    />
+                    {route.store ? (
+                      <Provider store={route.store}>{route.app}</Provider>
+                    ) : (
+                      route.app
+                    )}
+                  </div>
+                )}
+              />
+            );
+          } else {
+            return (
+              <Route
+                path={route.path}
+                render={() => (
+                  <div>
+                    <Header position={'relative'} />
+                    {route.app}
+                  </div>
+                )}
+              />
+            );
+          }
+        })}
       </Switch>
     );
   }

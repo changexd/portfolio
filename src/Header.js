@@ -1,5 +1,14 @@
 import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
+
+const headerTitle = [
+  {title: 'Home', link: ''},
+  {title: 'Todo List', link: 'todolist'},
+  {title: 'LightsOut', link: 'lightsout'},
+  {title: 'BlogPost', link: 'blogpost'},
+  {title: 'Comment', link: 'Comment'},
+  {title: 'MessageBox', link: 'MessageBox'},
+];
 const Header = ({position}) => {
   return (
     <div
@@ -10,54 +19,18 @@ const Header = ({position}) => {
         className=' text-center p-2 mx-auto my-0 '
         style={{listStyle: 'none'}}
       >
-        <NavLink
-          exact
-          activeClassName='activenav '
-          className='d-inline-block m-auto p-xs-1 p-3 section nav'
-          to='/'
-        >
-          <li className=''>Home</li>{' '}
-        </NavLink>{' '}
-        <NavLink
-          exact
-          activeClassName='activenav'
-          className='d-inline-block m-auto p-xs-1 p-3 section nav'
-          to='/todolist'
-        >
-          <li>Todo List</li>{' '}
-        </NavLink>
-        <NavLink
-          exact
-          activeClassName='activenav'
-          className='d-inline-block m-auto p-xs-1 p-3 section nav'
-          to='/lightsout'
-        >
-          <li>lightsout</li>{' '}
-        </NavLink>
-        <NavLink
-          exact
-          activeClassName='activenav'
-          className='d-inline-block m-auto p-xs-1 p-3 section nav'
-          to='/blogpost'
-        >
-          <li>BlogPost</li>
-        </NavLink>
-        <NavLink
-          exact
-          activeClassName='activenav'
-          className='d-inline-block m-auto p-xs-1 p-3 section nav'
-          to='/Comment'
-        >
-          <li>Comment</li>
-        </NavLink>
-        <NavLink
-          exact
-          activeClassName='activenav'
-          className='d-inline-block m-auto p-xs-1 p-3 section nav'
-          to='/MessageBox'
-        >
-          <li>MessageBox</li>
-        </NavLink>
+        {headerTitle.map((title) => {
+          return (
+            <NavLink
+              exact
+              activeClassName='activenav '
+              className='d-inline-block m-auto p-xs-1 p-3 section nav'
+              to={`/${title.link}`}
+            >
+              <li className=''>{title.title}</li>{' '}
+            </NavLink>
+          );
+        })}
       </ul>
     </div>
   );
