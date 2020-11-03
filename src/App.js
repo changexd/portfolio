@@ -6,7 +6,7 @@ import Main from './Main';
 import LightsOut from './LightsOut/LightsOut';
 import TodoListApp from './TodoList/TodoListApp';
 import TodoListHookedApp from './TodoListHooked/TodoListHookedApp';
-import BlogPost from './BlogPost/BlogPost';
+import BlogPostHooked from './BlogPost/BlogPostHooked';
 import Comment from './Comment/Comment';
 import MessageBox from './MessageBox/MessageBox';
 //Redux
@@ -54,8 +54,8 @@ class App extends Component {
         exact: true,
       },
       {
-        path: '/BlogPost',
-        app: <BlogPost handleleave={this.handleleave} />,
+        path: '/BlogPostHooked',
+        app: <BlogPostHooked handleleave={this.handleleave} />,
         absoluteHeader: false,
         store: '',
         exact: true,

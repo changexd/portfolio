@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import ResponseForm from './ResponseForm';
 import ResponseList from './ResponseList';
 import UseResponseState from './hooks/UseResponseState';

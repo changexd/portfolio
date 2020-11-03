@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import UseToggleState from '../GeneralFunction/UseToggleState';
 
 // Give different tags different color
 let colors = {
@@ -8,105 +9,96 @@ let colors = {
   Logic: '#F4B281',
 };
 
-class Post extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      userId: this.props.userId,
-      title: this.props.title,
-      body: this.props.body,
-      tag: this.props.tag,
-      hover: false,
-    };
-    this.handlehover = this.handlehover.bind(this);
-  }
-  handlehover = () => {
-    this.setState({ hover: !this.state.hover });
-  };
-  render() {
-    return (
+//
+function Post({userId, title, body, tag}) {
+  const [hover, ToggleHover] = UseToggleState(false);
+
+  return (
+    <div
+      className=' m-5 p-0 m-xs-1 blogpostfont PostContainer'
+      onMouseEnter={() => {
+        ToggleHover();
+      }}
+      onMouseLeave={() => {
+        ToggleHover();
+      }}
+    >
       <div
-        className=' m-5 p-0 m-xs-1 blogpostfont PostContainer'
-        onMouseEnter={this.handlehover}
-        onMouseLeave={this.handlehover}
-      >
+        className='position-absolute '
+        style={{
+          width: ' 100%',
+          height: ' 100%',
+          top: '0',
+          left: '0',
+          border: '10px dashed #21B97B',
+          opacity: `${hover === true ? '100%' : '0%'}`,
+          transition: 'ease-in 0.2s',
+        }}
+      ></div>
+      <div className='posthover' style={{width: '100%', height: '100%'}}>
         <div
-          className='position-absolute '
+          className='tag'
+          data={tag}
+          // onClick={this.props.searchwithtagname}
           style={{
-            width: ' 100%',
-            height: ' 100%',
-            top: '0',
-            left: '0',
-            border: '10px dashed #21B97B',
-            opacity: `${this.state.hover === true ? '100%' : '0%'}`,
-            transition: 'ease-in 0.2s',
+            backgroundColor: colors[tag],
           }}
-        ></div>
-        <div className='posthover' style={{ width: '100%', height: '100%' }}>
-          <div
-            className='tag'
-            data={this.props.tag}
-            onClick={this.props.searchwithtagname}
+        >
+          <p
             style={{
-              backgroundColor: colors[this.state.tag],
+              fontSize: 'auto',
+              position: 'relative',
+              left: '50%',
+              top: '50%',
+              transform: 'translate(-50%,-50%)',
             }}
           >
+            {tag}
+          </p>
+        </div>
+
+        <div className='p-0 inner position-relative  '>
+          <div
+            className='p-0'
+            style={{
+              height: '60%',
+              overflow: 'hidden',
+              backgroundColor: '#E3E8E6',
+              position: 'relative',
+            }}
+          >
+            <img
+              width='100%'
+              src={`https://robohash.org/${userId}`}
+              className='robots'
+            ></img>
+          </div>
+          <div
+            className='p-0'
+            style={{
+              height: '40%',
+              backgroundColor: '#C9CFCC',
+              overflow: 'hidden',
+            }}
+          >
+            <p>{userId}</p>
+            <p>{title}</p>
             <p
               style={{
-                fontSize: 'auto',
-                position: 'relative',
-                left: '50%',
-                top: '50%',
-                transform: 'translate(-50%,-50%)',
+                height: 'auto',
+                maxWidth: '100%',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                display: 'block',
               }}
             >
-              {this.state.tag}
+              {body}
             </p>
-          </div>
-
-          <div className='p-0 inner position-relative  '>
-            <div
-              className='p-0'
-              style={{
-                height: '60%',
-                overflow: 'hidden',
-                backgroundColor: '#E3E8E6',
-                position: 'relative',
-              }}
-            >
-              <img
-                width='100%'
-                src={`https://robohash.org/${this.state.userId}`}
-                className='robots'
-              ></img>
-            </div>
-            <div
-              className='p-0'
-              style={{
-                height: '40%',
-                backgroundColor: '#C9CFCC',
-                overflow: 'hidden',
-              }}
-            >
-              <p>{this.state.userId}</p>
-              <p>{this.state.title}</p>
-              <p
-                style={{
-                  height: 'auto',
-                  maxWidth: '100%',
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis',
-                  display: 'block',
-                }}
-              >
-                {this.state.body}
-              </p>
-            </div>
           </div>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default Post;
