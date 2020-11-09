@@ -2,7 +2,7 @@ import React from 'react';
 import Container from '@material-ui/core/Container';
 import {styled} from '@material-ui/core/styles';
 import {NavLink} from 'react-router-dom';
-import useToggleState from '../GeneralFunction/useToggleState';
+import UseToggleState from '../GeneralFunction/UseToggleState';
 
 const ListContainer = styled(Container)({
   width: '50%',
@@ -52,7 +52,7 @@ function MessageList({
   SortByRecentDate,
   SortByOlderDate,
 }) {
-  const [isToggled, ToggleSort] = useToggleState(false);
+  const [isToggled, ToggleSort] = UseToggleState(false);
   return (
     <ListContainer>
       <ListHeader>

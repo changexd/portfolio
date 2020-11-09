@@ -1,10 +1,10 @@
 import React from 'react';
 import {v4 as uuidv4} from 'uuid';
-import useInputChange from '../GeneralFunction/useInputChange';
+import UseInputChange from '../GeneralFunction/UseInputChange';
 
 function TodoForms({AddTodo}) {
-  const [task, TaskHandleChange, TaskReset] = useInputChange('');
-  const [date, DateHandleChange, DateReset] = useInputChange('');
+  const [task, TaskHandleChange, TaskReset] = UseInputChange('');
+  const [date, DateHandleChange, DateReset] = UseInputChange('');
 
   return (
     <div>

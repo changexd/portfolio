@@ -54,7 +54,7 @@ class App extends Component {
         exact: true,
       },
       {
-        path: '/BlogPostHooked',
+        path: '/BlogPost',
         app: <BlogPostHooked handleleave={this.handleleave} />,
         absoluteHeader: false,
         store: '',
