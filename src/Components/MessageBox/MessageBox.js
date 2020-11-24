@@ -5,7 +5,6 @@ import {Route, Switch} from 'react-router-dom';
 import useClickToDir from './hooks/useClickToDir';
 import useMessageState from './hooks/useMessageState';
 import {example} from './example';
-import './App.css';
 
 function MessageBox() {
   const [messageState, SortByRecentDate, SortByOlderDate] = useMessageState(

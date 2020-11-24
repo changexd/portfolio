@@ -23,7 +23,7 @@ function WelcomMessage({selectState}) {
     default:
       welcomeMessage = (
         <p className='loginFontWeight greyText my-2'>
-          Please select an account type to continue
+          You can click on the Account Type to see what happens
         </p>
       );
   }
