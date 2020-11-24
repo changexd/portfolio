@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.64b1dbde.chunk.css",
-    "main.js": "/portfolio/static/js/main.dc7122d7.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.dc7122d7.chunk.js.map",
+    "main.css": "/portfolio/static/css/main.018b62ae.chunk.css",
+    "main.js": "/portfolio/static/js/main.430395a4.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.430395a4.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.209c2d7e.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.209c2d7e.js.map",
     "static/css/2.d9ad5f5c.chunk.css": "/portfolio/static/css/2.d9ad5f5c.chunk.css",
-    "static/js/2.c6879bcc.chunk.js": "/portfolio/static/js/2.c6879bcc.chunk.js",
-    "static/js/2.c6879bcc.chunk.js.map": "/portfolio/static/js/2.c6879bcc.chunk.js.map",
+    "static/js/2.6d04bde2.chunk.js": "/portfolio/static/js/2.6d04bde2.chunk.js",
+    "static/js/2.6d04bde2.chunk.js.map": "/portfolio/static/js/2.6d04bde2.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "precache-manifest.aaf84c1fcf846d408680b77c7c7090b2.js": "/portfolio/precache-manifest.aaf84c1fcf846d408680b77c7c7090b2.js",
+    "precache-manifest.bc4e49208efb6dc5f8e0ab0a51b28746.js": "/portfolio/precache-manifest.bc4e49208efb6dc5f8e0ab0a51b28746.js",
     "service-worker.js": "/portfolio/service-worker.js",
     "static/css/2.d9ad5f5c.chunk.css.map": "/portfolio/static/css/2.d9ad5f5c.chunk.css.map",
-    "static/css/main.64b1dbde.chunk.css.map": "/portfolio/static/css/main.64b1dbde.chunk.css.map",
-    "static/js/2.c6879bcc.chunk.js.LICENSE.txt": "/portfolio/static/js/2.c6879bcc.chunk.js.LICENSE.txt",
+    "static/css/main.018b62ae.chunk.css.map": "/portfolio/static/css/main.018b62ae.chunk.css.map",
+    "static/js/2.6d04bde2.chunk.js.LICENSE.txt": "/portfolio/static/js/2.6d04bde2.chunk.js.LICENSE.txt",
     "static/media/App.css": "/portfolio/static/media/background.38b4c690.jpg",
     "static/media/headshot.png": "/portfolio/static/media/headshot.785530ea.png",
     "static/media/student.svg": "/portfolio/static/media/student.14641d08.svg",
@@ -22,8 +22,8 @@
   "entrypoints": [
     "static/js/runtime-main.209c2d7e.js",
     "static/css/2.d9ad5f5c.chunk.css",
-    "static/js/2.c6879bcc.chunk.js",
-    "static/css/main.64b1dbde.chunk.css",
-    "static/js/main.dc7122d7.chunk.js"
+    "static/js/2.6d04bde2.chunk.js",
+    "static/css/main.018b62ae.chunk.css",
+    "static/js/main.430395a4.chunk.js"
   ]
 }
