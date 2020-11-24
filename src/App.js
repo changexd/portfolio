@@ -9,7 +9,6 @@ import TodoListHookedApp from './Components/TodoListHooked/TodoListHookedApp';
 import BlogPostHooked from './Components/BlogPost/BlogPostHooked';
 import Comment from './Components/Comment/Comment';
 import MessageBox from './Components/MessageBox/MessageBox';
-import LoginPage from './Components/LoginPage/LoginPage';
 //Redux
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
@@ -71,13 +70,6 @@ class App extends Component {
       {
         path: '/MessageBox/',
         app: <MessageBox handleleave={this.handleleave} />,
-        absoluteHeader: false,
-        store: '',
-        exact: false,
-      },
-      {
-        path: '/LoginPage',
-        app: <LoginPage handleleave={this.handleleave} />,
         absoluteHeader: false,
         store: '',
         exact: false,
