@@ -30,11 +30,20 @@ const mapStateToProps = (state) => {
 class Comment extends Component {
   render() {
     return (
-      <div className='text-center container'>
-        <MyCard>
-          <MessageForm />
-          <MessageBoard />
-        </MyCard>
+      <div className='blogpostbackground' style={{height: '100vh'}}>
+        <div
+          className='text-center container-fluid'
+          style={{
+            position: 'relative',
+            transform: 'translateY(-50%)',
+            top: '50%',
+          }}
+        >
+          <MyCard>
+            <MessageForm />
+            <MessageBoard />
+          </MyCard>
+        </div>
       </div>
     );
   }

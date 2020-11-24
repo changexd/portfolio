@@ -8,6 +8,7 @@ const headerTitle = [
   {title: 'BlogPost', link: 'blogpost'},
   {title: 'Comment', link: 'Comment'},
   {title: 'MessageBox', link: 'MessageBox'},
+  {title: 'LoginPage', link: 'LoginPage'},
 ];
 const Header = ({position}) => {
   return (

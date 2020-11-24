@@ -9,6 +9,7 @@ const MessageTextContainer = styled(Container)({
   display: 'inline-block',
   verticalAlign: 'top',
   padding: '0',
+  backgroundColor: 'inherit',
 });
 const TextHeader = styled(Container)({
   width: '100%',
