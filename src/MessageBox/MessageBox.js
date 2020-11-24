@@ -2,16 +2,16 @@ import React from 'react';
 import MessageList from './MessageList';
 import MessageText from './MessageText';
 import {Route, Switch} from 'react-router-dom';
-import UseClickToDir from './hooks/UseClickToDir';
-import UseMessageState from './hooks/UseMessageState';
+import useClickToDir from './hooks/useClickToDir';
+import useMessageState from './hooks/useMessageState';
 import {example} from './example';
 import './App.css';
 
 function MessageBox() {
-  const [messageState, SortByRecentDate, SortByOlderDate] = UseMessageState(
+  const [messageState, SortByRecentDate, SortByOlderDate] = useMessageState(
     example
   );
-  const [message, SetMessageStateWithLink] = UseClickToDir({
+  const [message, SetMessageStateWithLink] = useClickToDir({
     message: '',
     direction: '',
   });

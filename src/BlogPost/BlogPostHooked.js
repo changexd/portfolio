@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
-import UseBlogPostState from './UseBlogPostState';
-import UseInputChange from '../GeneralFunction/UseInputChange';
+import useBlogPostState from './useBlogPostState';
+import useInputChange from '../GeneralFunction/useInputChange';
 import Post from './Post';
 
 const axios = require('axios');
@@ -43,8 +43,8 @@ function FilterItems(item, ref) {
 }
 
 function BlogPostHooked({handleleave}) {
-  const [searchArea, HandleAreaChange] = UseInputChange('');
-  const [post, AddPost] = UseBlogPostState([]);
+  const [searchArea, HandleAreaChange] = useInputChange('');
+  const [post, AddPost] = useBlogPostState([]);
   useEffect(() => {
     GetPosts(post, AddPost);
   }, []);

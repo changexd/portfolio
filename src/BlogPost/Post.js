@@ -1,5 +1,5 @@
 import React from 'react';
-import UseToggleState from '../GeneralFunction/UseToggleState';
+import useToggleState from '../GeneralFunction/useToggleState';
 
 // Give different tags different color
 let colors = {
@@ -11,7 +11,7 @@ let colors = {
 
 //
 function Post({userId, title, body, tag}) {
-  const [hover, ToggleHover] = UseToggleState(false);
+  const [hover, ToggleHover] = useToggleState(false);
 
   return (
     <div

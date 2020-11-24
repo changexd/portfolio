@@ -1,8 +1,8 @@
 import React from 'react';
-import UseInputChange from '../GeneralFunction/UseInputChange';
+import useInputChange from '../GeneralFunction/useInputChange';
 //Use Hook to connect its response to its parent
 function ResponseForm({AddResponse, ToggleRespond}) {
-  const [response, HandleChange, ResetResponse] = UseInputChange('');
+  const [response, HandleChange, ResetResponse] = useInputChange('');
 
   const responseInput = {
     width: '70%',

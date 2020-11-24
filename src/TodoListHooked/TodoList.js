@@ -1,11 +1,11 @@
 import React from 'react';
-import UseToggleState from '../GeneralFunction/UseToggleState';
-import UseInputChange from '../GeneralFunction/UseInputChange';
+import useToggleState from '../GeneralFunction/useToggleState';
+import useInputChange from '../GeneralFunction/useInputChange';
 
 function TodoList({key, task, date, id, EditTodo, DeleteTodo}) {
-  const [editValue, ToggleState] = UseToggleState(false);
-  const [taskValue, TaskHandleChange] = UseInputChange(task);
-  const [dateValue, DateHandleChange] = UseInputChange(date);
+  const [editValue, ToggleState] = useToggleState(false);
+  const [taskValue, TaskHandleChange] = useInputChange(task);
+  const [dateValue, DateHandleChange] = useInputChange(date);
   if (editValue === false) {
     return (
       <div className='container my-3'>
