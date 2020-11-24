@@ -3,16 +3,16 @@ import {Switch, Route} from 'react-router-dom';
 //Components
 import Header from './Header';
 import Main from './Main';
-import LightsOut from './LightsOut/LightsOut';
-import TodoListApp from './TodoList/TodoListApp';
-import TodoListHookedApp from './TodoListHooked/TodoListHookedApp';
-import BlogPostHooked from './BlogPost/BlogPostHooked';
-import Comment from './Comment/Comment';
-import MessageBox from './MessageBox/MessageBox';
+import LightsOut from './Components/LightsOut/LightsOut';
+import TodoListApp from './Components/TodoList/TodoListApp';
+import TodoListHookedApp from './Components/TodoListHooked/TodoListHookedApp';
+import BlogPostHooked from './Components/BlogPost/BlogPostHooked';
+import Comment from './Components/Comment/Comment';
+import MessageBox from './Components/MessageBox/MessageBox';
 //Redux
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
-import {MessageBoardReducer} from './Comment/redux/reducers';
+import {MessageBoardReducer} from './Components/Comment/redux/reducers';
 //CSS
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
