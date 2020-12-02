@@ -53,7 +53,7 @@ function MessageBox() {
           path={`/MessageBox/${ele.direction}/`}
           render={() => {
             return (
-              <div style={appContainer}>
+              <div style={appContainer} className='blogpostbackground'>
                 <MessageList
                   SortByOlderDate={SortByOlderDate}
                   SortByRecentDate={SortByRecentDate}

@@ -21,6 +21,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //store
 const commentStore = createStore(MessageBoardReducer);
 
+//sass
+
 //Using reactrouter to route the site
 class App extends Component {
   constructor(props) {
