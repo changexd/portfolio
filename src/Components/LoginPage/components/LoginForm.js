@@ -5,9 +5,11 @@ import useInputChange from '../../GeneralFunction/useInputChange';
 import PasswordVerfication from '../functions/PasswordVerfication';
 
 function LoginForm({selectState, AddMember, SetSelectDefault}) {
-  const [email, EmailInputChange, SetEmailDefault] = useInputChange('');
+  const [email, EmailInputChange, SetEmailDefault] = useInputChange(
+    'example123123@gmail.com'
+  );
   const [password, PasswordInputChange, SetPassWordDefault] = useInputChange(
-    ''
+    'example123123'
   );
 
   //Submits and set all type of input to default value
