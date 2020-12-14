@@ -11,7 +11,7 @@ class TodoListApp extends Component {
         {
           task: 'Become a React.js developer',
           date: '2020/10/30',
-          id: 'example',
+          id: 'example2',
         },
         {
           task: 'Work in an awesome company!',
