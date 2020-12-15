@@ -45,34 +45,10 @@ class TodoListApp extends Component {
   };
   render() {
     return (
-      <div className='App todobackground p-5 todolist'>
-        <div
-          className=' p-5'
-          id='popup'
-          style={{
-            width: '400px',
-            position: 'absolute',
-            textAlign: 'center',
-            top: '50%',
-            left: '5%',
-            transform: 'translate(0,-50%)',
-            zIndex: '99',
-            backgroundColor: 'rgba(255, 255, 255,.4)',
-          }}
-        >
+      <div className='todoApp '>
+        <div className='popup'>
           {' '}
-          <span
-            onClick={this.props.handleleave}
-            className='p-2'
-            style={{
-              position: 'absolute',
-              right: '1%',
-              top: '1%',
-              cursor: 'pointer',
-            }}
-          >
-            X
-          </span>
+          <span onClick={this.props.handleleave}>X</span>
           This is a demonstration of how a child state passes to its parent{' '}
           <br /> You can try creating a new task and edit it or even delete it
           just like you normally do on Facebook!
@@ -83,12 +59,9 @@ class TodoListApp extends Component {
           而底下也有原始碼與medium詳解可以閱讀 點擊Hooked來看利用React Hook
           製作的吧!
         </div>
-        <div
-          className='m-auto   my-3 p-0 position-relative todoform'
-          style={{}}
-        >
-          <h1 className='text-center todofont p-3 todotitle'>Todo List</h1>
-          <div className='overflow-auto' style={{height: '400px'}}>
+        <div className=' app__container'>
+          <h1>Todo List</h1>
+          <div className='todoList__container'>
             {this.state.todo.map((el, i) => {
               return (
                 <TodoList
@@ -102,23 +75,15 @@ class TodoListApp extends Component {
               );
             })}
           </div>
-
-          <div className='m-auto container'>
-            <TodoForms UpdateTodo={this.UpdateTodo} />
-          </div>
+          <TodoForms UpdateTodo={this.UpdateTodo} />
         </div>
-        <div className='container text-center '>
-          {' '}
+        <div className='todo__buttons'>
           <a
             href='https://github.com/changexd/portfolio/tree/main/src/TodoList'
-            style={{color: 'white'}}
             target='_blank'
             rel='noopener noreferrer'
           >
-            <button
-              href='https://github.com/changexd/portfolio/tree/main/src/TodoList'
-              className='btn my-5 p-4 todofont section todobtn'
-            >
+            <button href='https://github.com/changexd/portfolio/tree/main/src/TodoList'>
               Click me for the source code!
             </button>
           </a>{' '}
@@ -128,20 +93,10 @@ class TodoListApp extends Component {
             target='_blank'
             rel='noopener noreferrer'
           >
-            <button
-              href=''
-              className='btn my-5 p-4 todofont section mx-3 todobtn'
-            >
-              Tutorial
-            </button>
-          </a>{' '}
+            <button>Tutorial</button>
+          </a>
           <NavLink exact to='/TodoListHooked'>
-            <button
-              href=''
-              className='btn my-5 p-4 todofont section mx-3 todobtn'
-            >
-              Hooked
-            </button>
+            <button href=''>Hooked</button>
           </NavLink>{' '}
         </div>
       </div>

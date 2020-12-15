@@ -8,28 +8,16 @@ function TodoList({key, task, date, id, EditTodo, DeleteTodo}) {
   const [dateValue, DateHandleChange] = useInputChange(date);
   if (editValue === false) {
     return (
-      <div className='container my-3'>
-        <div
-          id={date}
-          className='row px-3 py-2'
-          style={{
-            backgroundColor: 'rgba(152, 204, 242,.4)',
-          }}
-        >
-          <div className='d-inline-block   col-5 p-2 m-auto section'>
-            <p className='m-2 todofont' style={{color: 'white'}}>
-              {taskValue}
-            </p>
+      <div className='todoItem'>
+        <div id={date} className='todoItem__container'>
+          <div className='todoItem__task section'>
+            <p>{taskValue}</p>
           </div>
-          <div className='d-inline-block col-5 p-2 m-auto section'>
-            <p className='m-2 todofont' style={{color: 'white'}}>
-              {dateValue}
-            </p>
+          <div className='todoItem__date section'>
+            <p>{dateValue}</p>
           </div>
-          <div id={id} className='d-inline-block   col-1 p-2 m-auto section'>
+          <div id={id} className='todoItem__option section'>
             <p
-              className='m-2 todofont'
-              style={{color: 'white', cursor: 'pointer'}}
               onClick={(event) => {
                 DeleteTodo(event);
               }}
@@ -37,40 +25,20 @@ function TodoList({key, task, date, id, EditTodo, DeleteTodo}) {
               x
             </p>
           </div>
-          <div className='d-inline-block col-1 p-2 m-auto section'>
-            <p
-              className='m-2 todofont'
-              style={{color: 'white', cursor: 'pointer'}}
-              onClick={ToggleState}
-            >
-              edit
-            </p>
+          <div className='todoItem__option section'>
+            <p onClick={ToggleState}>edit</p>
           </div>
         </div>
       </div>
     );
   } else {
     return (
-      <div className='container my-3 '>
+      <div className='todoItem '>
         <div id={id}>
-          <form
-            className='row px-3 py-2'
-            style={{
-              backgroundColor: 'rgba(152, 204, 242,.4)',
-            }}
-          >
-            <div
-              className='d-inline-block col-5 p-2 m-auto section'
-              style={{width: 'auto'}}
-            >
+          <form className='todoItem__container'>
+            <div className='todoItem__task section'>
               <input
-                className='todofont'
-                style={{
-                  width: 'auto',
-                  backgroundColor: 'transparent',
-                  color: 'white',
-                  border: 'none',
-                }}
+                className='todoItem__editArea'
                 name='task'
                 value={taskValue}
                 onChange={(event) => {
@@ -78,17 +46,9 @@ function TodoList({key, task, date, id, EditTodo, DeleteTodo}) {
                 }}
               ></input>
             </div>
-            <div
-              className='d-inline-block col-5 p-2 m-auto section '
-              style={{width: 'auto'}}
-            >
+            <div className='todoItem__date section'>
               <input
-                className='todofont'
-                style={{
-                  backgroundColor: 'transparent',
-                  color: 'white',
-                  border: 'none',
-                }}
+                className='todoItem__editArea section'
                 name='date'
                 value={dateValue}
                 onChange={(event) => {
@@ -96,20 +56,17 @@ function TodoList({key, task, date, id, EditTodo, DeleteTodo}) {
                 }}
               ></input>
             </div>
-            <div id={id} className='d-inline-block col-1 p-2 m-auto section'>
+            <div id={id} className='todoItem__option section'>
               <p
-                className='m-2 todofont'
                 onClick={(event) => {
                   DeleteTodo(event);
                 }}
-                style={{cursor: 'pointer'}}
               >
                 x
               </p>
             </div>
-            <div id={id} className='d-inline-block col-1 p-2 m-auto section'>
+            <div id={id} className='todoItem__option section'>
               <p
-                className='m-2 todofont'
                 onClick={(event) => {
                   EditTodo(event.target.parentNode.id, {
                     task: taskValue,
@@ -118,7 +75,6 @@ function TodoList({key, task, date, id, EditTodo, DeleteTodo}) {
                   });
                   ToggleState();
                 }}
-                style={{cursor: 'pointer'}}
               >
                 done!
               </p>

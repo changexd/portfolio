@@ -1,160 +1,20 @@
-.todoApp {
-  font-family: "Sansita Swashed", cursive;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 3rem;
-  background: linear-gradient(299deg, #119adf 0%, #b0d8ed 18%, #82c6e9 82%, #119adf 100%);
-}
-
-.todoApp .app__container {
-  padding: 2rem;
-  color: white;
-  height: auto;
-  width: 70rem;
-  background-color: #175b8e;
-  -webkit-box-shadow: -1.5rem -1.5rem #358aca;
-          box-shadow: -1.5rem -1.5rem #358aca;
-}
-
-.todoApp .app__container h1 {
-  font-size: 6rem;
-  text-align: center;
-}
-
-.todoApp .todoList__container {
-  overflow: auto;
-  height: 40rem;
-}
-
-.todoItem {
-  max-width: 100%;
-  margin: 2rem 0 2rem 0;
-}
-
-.todoItem__container {
-  font-size: 2rem;
-  padding: 1.5rem;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 2fr 2fr (1fr)[2];
-      grid-template-columns: 2fr 2fr repeat(2, 1fr);
-  justify-items: center;
-  background-color: rgba(152, 204, 242, 0.4);
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.todoItem__container .todoItem__date {
-  width: 60%;
-}
-
-.todoItem__container .todoItem__task {
-  max-width: 100%;
-  -ms-grid-column-align: start;
-      justify-self: start;
-}
-
-.todoItem__container .todoItem__option {
-  cursor: pointer;
-}
-
-.todoItem__container .todoItem__editArea {
-  width: auto;
-  background-color: transparent;
-}
-
-.todoItem__container input {
-  color: white;
-  border: none;
-}
-
-.todoItem__container p {
-  margin: 0;
-}
-
-.todoForm {
-  font-size: 1.4rem;
-}
-
-.todoForm label {
-  display: block;
-  margin: 1.5rem;
-  text-decoration: underline;
-  font-size: 2rem;
-}
-
-.todoForm input {
-  margin: 1.5rem;
-  padding: 1.5rem;
-}
-
-.todoForm button {
-  color: white;
-  padding: 1.5rem;
-  border: none;
-  background-color: rgba(152, 204, 242, 0.4);
-}
-
-.todo__buttons {
-  text-align: center;
-}
-
-.todo__buttons button {
-  border: none;
-  margin: 2rem 2rem 1rem;
-  padding: 2rem;
-  background-color: #175b8e;
-  color: white;
-  font-size: 2rem;
-  -webkit-box-shadow: -1rem -1rem #358aca;
-          box-shadow: -1rem -1rem #358aca;
-}
-
-html {
-  padding: 0;
-  margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-size: 10px;
-}
-
 .messageActive {
   background-color: rgba(74, 74, 74, 0.2);
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
   color: #4a4a4a;
 }
 
-.popup {
-  width: 40rem;
-  position: fixed;
-  text-align: center;
-  top: 50%;
-  left: 5%;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
-  z-index: 99;
-  background-color: rgba(255, 255, 255, 0.4);
-  font-size: 1.4rem;
-  padding: 2rem;
+.todofont {
+  font-family: 'Sansita Swashed', cursive;
+  font-size: 20px;
+  color: white;
 }
 
-.popup span {
-  position: absolute;
-  right: 1%;
-  top: 1%;
-  cursor: pointer;
+#popup {
+  font-size: 16px;
 }
 
 .headshot {
@@ -260,6 +120,36 @@ a {
 .activenav {
   opacity: 0.4;
   text-decoration: underline;
+}
+
+.todobackground {
+  background: #119adf;
+  background: linear-gradient(299deg, #119adf 0%, #b0d8ed 18%, #82c6e9 82%, #119adf 100%);
+}
+
+.todotitle {
+  font-size: 60px;
+}
+
+.todoform {
+  height: auto;
+  width: 700px;
+  background-color: #175b8e;
+  -webkit-box-shadow: -15px -15px #358aca;
+          box-shadow: -15px -15px #358aca;
+}
+
+.todolist {
+  height: auto;
+  min-height: 768px;
+}
+
+.todobtn {
+  background-color: #175b8e !important;
+  color: white !important;
+  font-size: 25px !important;
+  -webkit-box-shadow: -10px -10px #358aca;
+          box-shadow: -10px -10px #358aca;
 }
 
 .tag {
@@ -446,6 +336,33 @@ a {
     font-size: 17px;
     cursor: pointer;
     color: 'black';
+  }
+  .todolist {
+    height: auto;
+    min-height: 600px;
+    width: 100vw;
+  }
+  .todoform {
+    height: auto;
+    width: 80vw;
+    background-color: #175b8e;
+    -webkit-box-shadow: -5px -5px #358aca;
+            box-shadow: -5px -5px #358aca;
+  }
+  .todofont {
+    font-family: 'Sansita Swashed', cursive;
+    font-size: 14px;
+    color: white;
+  }
+  .todotitle {
+    font-size: 30px;
+  }
+  .todobtn {
+    background-color: #175b8e !important;
+    color: white !important;
+    font-size: 25px !important;
+    -webkit-box-shadow: -10px -10px #358aca;
+            box-shadow: -10px -10px #358aca;
   }
   .lightsoutfont {
     color: white;
