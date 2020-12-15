@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import useBlogPostState from './useBlogPostState';
 import useInputChange from '../GeneralFunction/useInputChange';
 import Post from './Post';
@@ -43,7 +43,7 @@ function FilterItems(item, ref) {
 }
 
 function BlogPostHooked({handleleave}) {
-  const [searchArea, HandleAreaChange] = useInputChange('');
+  const [searchArea, HandleAreaChange] = useState('');
   const [post, AddPost] = useBlogPostState([]);
   useEffect(() => {
     GetPosts(post, AddPost);
@@ -69,6 +69,7 @@ function BlogPostHooked({handleleave}) {
             title={post.title}
             body={post.body}
             tag={post.tag}
+            HandleAreaChange={HandleAreaChange}
             // searchwithtagname={this.searchwithtagname}
           />
         );
@@ -124,7 +125,7 @@ function BlogPostHooked({handleleave}) {
         </label>
         <input
           onChange={(event) => {
-            HandleAreaChange(event);
+            HandleAreaChange(event.target.value);
           }}
           className='m-auto p-2 blogsearch'
           type='text'

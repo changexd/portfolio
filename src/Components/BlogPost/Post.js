@@ -10,7 +10,7 @@ let colors = {
 };
 
 //
-function Post({userId, title, body, tag}) {
+function Post({userId, title, body, tag, HandleAreaChange}) {
   const [hover, ToggleHover] = useToggleState(false);
 
   return (
@@ -42,6 +42,9 @@ function Post({userId, title, body, tag}) {
           // onClick={this.props.searchwithtagname}
           style={{
             backgroundColor: colors[tag],
+          }}
+          onClick={(evt) => {
+            HandleAreaChange(evt.target.innerText);
           }}
         >
           <p
