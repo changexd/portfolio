@@ -30,7 +30,7 @@ const mapStateToProps = (state) => {
 class Comment extends Component {
   render() {
     return (
-      <div className='blogpostbackground' style={{height: '100vh'}}>
+      <div className='commentApp' style={{height: '100vh'}}>
         <div
           className='text-center container-fluid'
           style={{

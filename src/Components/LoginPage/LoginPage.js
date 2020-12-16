@@ -12,7 +12,7 @@ function LoginPage() {
   //you can submit one account to see if it works properly
   // console.log(memberState);
   return (
-    <div className='App  text-center p-1 ' style={{backgroundColor: '#F2F4F4'}}>
+    <div className='loginApp ' style={{backgroundColor: '#F2F4F4'}}>
       <div className='loginContainer'>
         <h5 className=' blueTheme my-3'>Choose Account Type</h5>
         <AccountType selectState={selectState} Select={Select} />

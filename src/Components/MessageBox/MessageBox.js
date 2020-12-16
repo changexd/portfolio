@@ -29,7 +29,7 @@ function MessageBox() {
         path='/MessageBox/'
         render={() => {
           return (
-            <div style={appContainer} className='blogpostbackground'>
+            <div style={appContainer} className='MessageApp'>
               <MessageList
                 SortByRecentDate={SortByRecentDate}
                 SortByOlderDate={SortByOlderDate}
