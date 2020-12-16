@@ -25,6 +25,9 @@ async function GetPosts(currentPost, AddPost) {
   let postNum = currentPost.length;
   let response = await axios
     .get('https://jsonplaceholder.typicode.com/posts')
+    .then((res) => {
+      return res;
+    })
     .catch((err) => {
       console.log(err.message);
       currentPost = currentPost;
