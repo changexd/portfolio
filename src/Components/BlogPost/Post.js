@@ -15,7 +15,7 @@ function Post({userId, title, body, tag, HandleAreaChange}) {
 
   return (
     <div
-      className=' m-5 p-0 m-xs-1 blogpostfont PostContainer'
+      className='blogPost__post__container'
       onMouseEnter={() => {
         ToggleHover();
       }}
@@ -23,21 +23,10 @@ function Post({userId, title, body, tag, HandleAreaChange}) {
         ToggleHover();
       }}
     >
-      <div
-        className='position-absolute '
-        style={{
-          width: ' 100%',
-          height: ' 100%',
-          top: '0',
-          left: '0',
-          border: '10px dashed #21B97B',
-          opacity: `${hover === true ? '100%' : '0%'}`,
-          transition: 'ease-in 0.2s',
-        }}
-      ></div>
-      <div className='posthover' style={{width: '100%', height: '100%'}}>
+      <div className='blogPost__post__line'></div>
+      <div className='blogPost__post__item__container'>
         <div
-          className='tag'
+          className='blogPost__post__tag'
           data={tag}
           // onClick={this.props.searchwithtagname}
           style={{
@@ -47,56 +36,17 @@ function Post({userId, title, body, tag, HandleAreaChange}) {
             HandleAreaChange(evt.target.innerText);
           }}
         >
-          <p
-            style={{
-              fontSize: 'auto',
-              position: 'relative',
-              left: '50%',
-              top: '50%',
-              transform: 'translate(-50%,-50%)',
-            }}
-          >
-            {tag}
-          </p>
+          <p>{tag}</p>
         </div>
 
-        <div className='p-0 inner position-relative  '>
-          <div
-            className='p-0'
-            style={{
-              height: '60%',
-              overflow: 'hidden',
-              backgroundColor: '#E3E8E6',
-              position: 'relative',
-            }}
-          >
-            <img
-              width='100%'
-              src={`https://robohash.org/${userId}`}
-              className='robots'
-            ></img>
+        <div className='blogPost__post__content '>
+          <div className='blogPost__post__image'>
+            <img width='100%' src={`https://robohash.org/${userId}`}></img>
           </div>
-          <div
-            className='p-0'
-            style={{
-              height: '40%',
-              backgroundColor: '#C9CFCC',
-              overflow: 'hidden',
-            }}
-          >
-            <p>{userId}</p>
-            <p>{title}</p>
-            <p
-              style={{
-                height: 'auto',
-                maxWidth: '100%',
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-                display: 'block',
-              }}
-            >
-              {body}
-            </p>
+          <div className='blogPost__post__text'>
+            <h1>{userId}</h1>
+            <h2>{title}</h2>
+            <p>{body}</p>
           </div>
         </div>
       </div>

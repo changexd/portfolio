@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import useBlogPostState from './useBlogPostState';
-import useInputChange from '../GeneralFunction/useInputChange';
 import Post from './Post';
 
 const axios = require('axios');
@@ -77,37 +76,9 @@ function BlogPostHooked({handleleave}) {
   }
 
   return (
-    <div
-      className='blogpostbackground'
-      style={{backgroundColor: '#88E1AB', minHeight: '1000px'}}
-    >
-      {' '}
-      <div
-        id='popup'
-        className=' p-5'
-        style={{
-          width: '400px',
-          position: 'fixed',
-          textAlign: 'center',
-          top: '50%',
-          left: '5%',
-          transform: 'translate(0,-50%)',
-          zIndex: '99',
-          backgroundColor: 'rgba(255, 255, 255,.9)',
-        }}
-      >
-        <span
-          onClick={handleleave}
-          className='p-2'
-          style={{
-            position: 'absolute',
-            right: '1%',
-            top: '1%',
-            cursor: 'pointer',
-          }}
-        >
-          X
-        </span>
+    <div className='blogPostApp'>
+      <div id='popup' className='popup'>
+        <span onClick={handleleave}>X</span>
         This is a demonstration of how you can make a search function using
         React states. <br /> Try and search something or even click on the tag
         to see the magic!
@@ -117,40 +88,28 @@ function BlogPostHooked({handleleave}) {
         <br />
         而搜尋方塊下方也有原始碼與medium詳解可以閱讀
       </div>
-      <div className='container text-center'>
-        <h1 className=' p-3 blogpostfont'>Search For the Post!</h1>
+      <div className='blogPost__search__container'>
+        <h1>Search For the Post!</h1>
 
-        <label className=' p-3 blogpostfont' style={{fontSize: '25px'}}>
-          Search:
-        </label>
+        <label>Search:</label>
         <input
           onChange={(event) => {
             HandleAreaChange(event.target.value);
           }}
-          className='m-auto p-2 blogsearch'
           type='text'
           placeholder='Search for the event'
-          style={{borderRadius: '15px', border: '3px solid #31A0C7'}}
           value={searchArea}
         ></input>
-        <div className='d-block'>
+        <div>
           <a
             href='https://github.com/changexd/portfolio/tree/main/src/BlogPost'
             target='_blank'
             rel='noopener noreferrer'
-            className=' m-auto w-auto '
           >
-            <button
-              class='btn  p-3 blogpostfont section m-3'
-              style={{backgroundColor: '#31A0C7'}}
-            >
-              {' '}
-              Click here for the source code!
-            </button>
+            <button class=' section '> Click here for the source code!</button>
           </a>
           <button
-            class='btn  p-3 blogpostfont section m-3'
-            style={{backgroundColor: '#31A0C7'}}
+            class=' section'
             onClick={() => {
               GetPosts(post, AddPost);
               console.log(post);
@@ -163,22 +122,15 @@ function BlogPostHooked({handleleave}) {
             href='https://medium.com/@darrenwang_1096/利用react-js來做具有搜尋功能的部落格吧-71aaa7b0740d'
             target='_blank'
             rel='noopener noreferrer'
-            className=' m-auto w-auto '
           >
-            <button
-              class='btn  p-3 blogpostfont section m-3'
-              style={{backgroundColor: '#31A0C7'}}
-            >
-              {' '}
-              Tutorial
-            </button>
+            <button class='  section'> Tutorial</button>
           </a>
         </div>
       </div>
-      <div className='text-center  p-5'>
+      <div className='blogPost__list__container '>
         {/* In case of loading too long, the loading section is added */}
         {post.length < 1 ? (
-          <div className='blogpostfont' style={{fontSize: '25px'}}>
+          <div style={{fontSize: '25px'}}>
             Loading...
             <div class='lds-ring' style={{verticalAlign: 'middle'}}>
               <div></div>
@@ -190,12 +142,6 @@ function BlogPostHooked({handleleave}) {
         ) : (
           <div>{filtered}</div>
         )}
-        {/* <div
-          // ref={(ref) => (this.scrollRef = ref)}
-          style={{height: '100px', margin: '30px'}}
-        >
-          <span>Loading...</span>
-        </div> */}
       </div>
     </div>
   );
