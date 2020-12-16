@@ -6,6 +6,10 @@
   background-color: rgba(255, 255, 255, 0.5);
 }
 
+.header__container--absolute a {
+  text-decoration: none;
+}
+
 .header__container--absolute ul {
   text-align: center;
   padding: 1.7rem;
@@ -32,6 +36,10 @@
   top: 0;
   padding: 0;
   background-color: rgba(255, 255, 255, 0.5);
+}
+
+.header__container--relative a {
+  text-decoration: none;
 }
 
 .header__container--relative ul {
