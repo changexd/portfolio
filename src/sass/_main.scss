@@ -1,0 +1,27 @@
+@mixin header__container($pos) {
+  width: 100%;
+  position: $pos;
+  top: 0;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  ul {
+    text-align: center;
+    padding: 1.7rem;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+  li {
+    font-family: 'Sansita Swashed', cursive;
+    font-size: 3rem;
+    cursor: pointer;
+    color: #175cae;
+    margin: 0 0 0 2rem;
+  }
+}
+.header__container--absolute {
+  @include header__container(absolute);
+}
+.header__container--relative {
+  @include header__container(relative);
+}

@@ -1,3 +1,59 @@
+.header__container--absolute {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.header__container--absolute ul {
+  text-align: center;
+  padding: 1.7rem;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header__container--absolute li {
+  font-family: 'Sansita Swashed', cursive;
+  font-size: 3rem;
+  cursor: pointer;
+  color: #175cae;
+  margin: 0 0 0 2rem;
+}
+
+.header__container--relative {
+  width: 100%;
+  position: relative;
+  top: 0;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.header__container--relative ul {
+  text-align: center;
+  padding: 1.7rem;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header__container--relative li {
+  font-family: 'Sansita Swashed', cursive;
+  font-size: 3rem;
+  cursor: pointer;
+  color: #175cae;
+  margin: 0 0 0 2rem;
+}
+
 .todoApp {
   font-family: "Sansita Swashed", cursive;
   display: -webkit-box;
@@ -321,13 +377,6 @@ a {
 
 .mainfont {
   font-family: 'Sansita Swashed', cursive;
-}
-
-.nav {
-  font-family: 'Sansita Swashed', cursive;
-  font-size: 30px;
-  cursor: pointer;
-  color: #175cae;
 }
 
 .lds-ring {

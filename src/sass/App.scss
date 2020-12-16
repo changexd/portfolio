@@ -1,8 +1,5 @@
 @import '_main';
 @import '_todolist';
-@import '_comment';
-@import '_loginpage';
-@import '_messagebox';
 @import '_lightsout';
 @import '_blogpost';
 //remember to check
@@ -63,12 +60,7 @@ a {
 .mainfont {
   font-family: 'Sansita Swashed', cursive;
 }
-.nav {
-  font-family: 'Sansita Swashed', cursive;
-  font-size: 30px;
-  cursor: pointer;
-  color: #175cae;
-}
+
 .lds-ring {
   display: inline-block;
   position: relative;

@@ -12,23 +12,12 @@ const headerTitle = [
 ];
 const Header = ({position}) => {
   return (
-    <div
-      className={`container-fluid  position-${position}  p-0`}
-      style={{top: '0', backgroundColor: 'rgba(255, 255, 255,0.5)'}}
-    >
-      <ul
-        className=' text-center p-2 mx-auto my-0 '
-        style={{listStyle: 'none'}}
-      >
+    <div className={`header__container--${position}`}>
+      <ul>
         {headerTitle.map((title) => {
           return (
-            <NavLink
-              exact
-              activeClassName='activenav '
-              className='d-inline-block m-auto p-xs-1 p-3 section nav'
-              to={`/${title.link}`}
-            >
-              <li className=''>{title.title}</li>{' '}
+            <NavLink exact activeClassName='activenav ' to={`/${title.link}`}>
+              <li>{title.title}</li>{' '}
             </NavLink>
           );
         })}
