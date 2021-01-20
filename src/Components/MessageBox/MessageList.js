@@ -21,6 +21,7 @@ const ListHeader = styled(Container)({
 });
 
 const InfoContainer = styled(Container)({
+  fontSize: '1.5rem',
   width: '100%',
   height: '10%',
   padding: '15px',

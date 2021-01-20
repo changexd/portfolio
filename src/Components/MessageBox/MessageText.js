@@ -3,6 +3,7 @@ import Container from '@material-ui/core/Container';
 import {styled} from '@material-ui/core/styles';
 import {Typography} from '@material-ui/core/';
 const MessageTextContainer = styled(Container)({
+  fontSize: '1.5rem',
   width: '50%',
   height: '100%',
   backgroundColor: '#FFFFFF',
